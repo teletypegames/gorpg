@@ -13,12 +13,21 @@ type GameField struct {
 	LevelSection LevelSection
 }
 
+type Position struct {
+	X int
+	Y int
+}
+
 type Context struct {
-	Player    Player
-	User      User
-	GameField GameField
+	Player           Player
+	User             User
+	CurrentGameField GameField
+	CurrentPosition  Position
 }
 
 func CreateContext() Context {
-	return Context{}
+	return Context{
+		Player: Player{},
+		User:   User{},
+	}
 }

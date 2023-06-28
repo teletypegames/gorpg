@@ -1,7 +1,6 @@
 package domain
 
 type Screen struct {
-	Controller ControllerInterface
 }
 
 type ScreenManager struct {
