@@ -9,7 +9,3 @@ type Controller struct {
 func (c Controller) Init() {
 
 }
-
-func (c Controller) Start() {
-
-}

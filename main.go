@@ -12,19 +12,13 @@ func main() {
 	controller := controller.Controller{
 		Context: context,
 	}
-	controller.Init()
-
 	presenter := presenter.Presenter{
 		Context: context,
 	}
-	presenter.Init()
-
 	domain := domain.Domain{
-		Context: context,
+		Context:    context,
+		Controller: controller,
+		Presenter:  presenter,
 	}
 	domain.Init()
-
-	domain.Start()
-	controller.Start()
-	presenter.Start()
 }

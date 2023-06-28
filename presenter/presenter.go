@@ -9,11 +9,3 @@ type Presenter struct {
 func (p Presenter) Init() {
 
 }
-
-func (p Presenter) Start() {
-
-}
-
-func (p Presenter) Process() {
-
-}
