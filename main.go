@@ -1,8 +1,8 @@
 package main
 
 import (
+	"game/constructor"
 	"game/domain"
-	"game/presenter"
 
 	"github.com/hajimehoshi/ebiten"
 )
@@ -18,10 +18,10 @@ func main() {
 			},
 		},
 	}
-	presenter := presenter.Presenter{
+	constructor := constructor.Constructor{
 		Domain: domain,
-		Keyboard: presenter.Keyboard{
-			KeyMap: presenter.KeyMap{
+		Keyboard: constructor.Keyboard{
+			KeyMap: constructor.KeyMap{
 				Up:      ebiten.KeyUp,
 				Down:    ebiten.KeyDown,
 				Right:   ebiten.KeyRight,
@@ -33,5 +33,5 @@ func main() {
 			},
 		},
 	}
-	presenter.Init()
+	constructor.Init()
 }

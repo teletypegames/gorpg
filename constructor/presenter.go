@@ -1,4 +1,4 @@
-package presenter
+package constructor
 
 import (
 	"game/domain"
@@ -11,13 +11,13 @@ type DomainInterface interface {
 	Init()
 }
 
-type Presenter struct {
+type Constructor struct {
 	Context  domain.Context
 	Domain   DomainInterface
 	Keyboard Keyboard
 }
 
-func (p Presenter) Init() {
+func (p Constructor) Init() {
 	ebiten.SetWindowSize(screenWidth*2, screenHeight*2)
 	ebiten.SetWindowTitle("Game")
 	if err := ebiten.RunGame(&GameEngine{
