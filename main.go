@@ -32,9 +32,9 @@ func main() {
 				Action3: ebiten.KeyEscape,
 			},
 		},
-		GameSettings: konstructor.GameSettings{
+		Settings: konstructor.Settings{
 			Name: "Game",
-			ScreenSettings: konstructor.ScreenSettings{
+			Screen: konstructor.ScreenSettings{
 				Width:  640,
 				Height: 480,
 			},

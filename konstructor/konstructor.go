@@ -18,21 +18,21 @@ type ScreenSettings struct {
 	Height int
 }
 
-type GameSettings struct {
-	Name           string
-	ScreenSettings ScreenSettings
+type Settings struct {
+	Name   string
+	Screen ScreenSettings
 }
 
 type Konstructor struct {
-	Context      ContextInterface
-	Domain       DomainInterface
-	Controller   Controller
-	GameSettings GameSettings
+	Context    ContextInterface
+	Domain     DomainInterface
+	Controller Controller
+	Settings   Settings
 }
 
 func (k Konstructor) Init() {
-	ebiten.SetWindowSize(k.GameSettings.ScreenSettings.Width, k.GameSettings.ScreenSettings.Height)
-	ebiten.SetWindowTitle(k.GameSettings.Name)
+	ebiten.SetWindowSize(k.Settings.Screen.Width, k.Settings.Screen.Height)
+	ebiten.SetWindowTitle(k.Settings.Name)
 	if err := ebiten.RunGame(&GameEngine{
 		Konstructor: k,
 	}); err != nil {

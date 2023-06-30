@@ -22,5 +22,5 @@ func (g *GameEngine) Draw(screen *ebiten.Image) {
 }
 
 func (g *GameEngine) Layout(outsideWidth, outsideHeight int) (int, int) {
-	return g.Konstructor.GameSettings.ScreenSettings.Width, g.Konstructor.GameSettings.ScreenSettings.Height
+	return g.Konstructor.Settings.Screen.Width, g.Konstructor.Settings.Screen.Height
 }
