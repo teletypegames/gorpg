@@ -24,19 +24,6 @@ type Keyboard struct {
 	KeyMap     KeyMap
 }
 
-func CreateDefaultKeyMap() KeyMap {
-	return KeyMap{
-		Up:      ebiten.KeyUp,
-		Down:    ebiten.KeyDown,
-		Right:   ebiten.KeyRight,
-		Left:    ebiten.KeyLeft,
-		Action0: ebiten.KeySpace,
-		Action1: ebiten.KeyAlt,
-		Action2: ebiten.KeyControl,
-		Action3: ebiten.KeyEscape,
-	}
-}
-
 func (k *Keyboard) Watch() {
 	values := reflect.ValueOf(k.KeyMap)
 

@@ -3,16 +3,35 @@ package main
 import (
 	"game/domain"
 	"game/presenter"
+
+	"github.com/hajimehoshi/ebiten"
 )
 
 func main() {
-	context := domain.CreateContext()
-
 	domain := domain.Domain{
-		Context: context,
-		Presenter: presenter.Presenter{
-			Context: context,
+		Context: domain.Context{
+			Player: domain.Player{
+				Name: "Player One",
+			},
+			User: domain.User{
+				Name: "John Doe",
+			},
 		},
 	}
-	domain.Init()
+	presenter := presenter.Presenter{
+		Domain: domain,
+		Keyboard: presenter.Keyboard{
+			KeyMap: presenter.KeyMap{
+				Up:      ebiten.KeyUp,
+				Down:    ebiten.KeyDown,
+				Right:   ebiten.KeyRight,
+				Left:    ebiten.KeyLeft,
+				Action0: ebiten.KeySpace,
+				Action1: ebiten.KeyAlt,
+				Action2: ebiten.KeyControl,
+				Action3: ebiten.KeyEscape,
+			},
+		},
+	}
+	presenter.Init()
 }

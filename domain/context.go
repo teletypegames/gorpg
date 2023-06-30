@@ -1,11 +1,11 @@
 package domain
 
 type User struct {
-	name string
+	Name string
 }
 
 type Player struct {
-	name string
+	Name string
 }
 
 type GameField struct {
@@ -23,11 +23,4 @@ type Context struct {
 	User             User
 	CurrentGameField GameField
 	CurrentPosition  Position
-}
-
-func CreateContext() Context {
-	return Context{
-		Player: Player{},
-		User:   User{},
-	}
 }
