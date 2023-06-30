@@ -20,7 +20,7 @@ func main() {
 	}
 	constructor := constructor.Constructor{
 		Domain: domain,
-		Keyboard: constructor.Keyboard{
+		Controller: constructor.Controller{
 			KeyMap: constructor.KeyMap{
 				Up:      ebiten.KeyUp,
 				Down:    ebiten.KeyDown,
@@ -30,6 +30,13 @@ func main() {
 				Action1: ebiten.KeyAlt,
 				Action2: ebiten.KeyControl,
 				Action3: ebiten.KeyEscape,
+			},
+		},
+		GameSettings: constructor.GameSettings{
+			Name: "Game",
+			ScreenSettings: constructor.ScreenSettings{
+				Width:  640,
+				Height: 480,
 			},
 		},
 	}

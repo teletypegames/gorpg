@@ -2,7 +2,6 @@ package constructor
 
 import (
 	"bytes"
-	"fmt"
 	"image"
 	"io/ioutil"
 	"log"
@@ -21,7 +20,6 @@ func LoadImage(path string) *ebiten.Image {
 
 	img, _, err := image.Decode(bytes.NewReader(file))
 	if err != nil {
-		fmt.Println("decode error")
 		log.Fatal(err)
 	}
 
