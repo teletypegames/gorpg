@@ -20,21 +20,23 @@ type ScreenSettings struct {
 
 type Settings struct {
 	Name   string
-	Screen ScreenSettings
+	Screen *ScreenSettings
 }
 
 type Konstructor struct {
-	Context    ContextInterface
 	Domain     DomainInterface
-	Controller Controller
-	Settings   Settings
+	Controller *Controller
+	Settings   *Settings
 }
 
 func (k Konstructor) Init() {
 	ebiten.SetWindowSize(k.Settings.Screen.Width, k.Settings.Screen.Height)
 	ebiten.SetWindowTitle(k.Settings.Name)
-	if err := ebiten.RunGame(&GameEngine{
-		Konstructor: k,
+	if err := ebiten.RunGame(&Engine{
+		Konstructor: &k,
+		Logic: &Logic{
+			Konstructor: &k,
+		},
 	}); err != nil {
 		log.Fatal(err)
 	}

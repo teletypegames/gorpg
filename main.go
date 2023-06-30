@@ -8,19 +8,18 @@ import (
 )
 
 func main() {
-	domain := domain.Domain{
-		Context: domain.Context{
-			Player: domain.Player{
-				Name: "Player One",
-			},
-			User: domain.User{
-				Name: "John Doe",
+	konstructor := konstructor.Konstructor{
+		Domain: &domain.Domain{
+			Context: domain.Context{
+				Player: domain.Player{
+					Name: "Player One",
+				},
+				User: domain.User{
+					Name: "John Doe",
+				},
 			},
 		},
-	}
-	konstructor := konstructor.Konstructor{
-		Domain: domain,
-		Controller: konstructor.Controller{
+		Controller: &konstructor.Controller{
 			KeyMap: konstructor.KeyMap{
 				Up:      ebiten.KeyUp,
 				Down:    ebiten.KeyDown,
@@ -32,9 +31,9 @@ func main() {
 				Action3: ebiten.KeyEscape,
 			},
 		},
-		Settings: konstructor.Settings{
+		Settings: &konstructor.Settings{
 			Name: "Game",
-			Screen: konstructor.ScreenSettings{
+			Screen: &konstructor.ScreenSettings{
 				Width:  640,
 				Height: 480,
 			},

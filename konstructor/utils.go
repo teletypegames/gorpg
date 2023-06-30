@@ -13,7 +13,7 @@ import (
 
 func LoadImage(path string) *ebiten.Image {
 
-	file, err := ioutil.ReadFile(path) //read the content of file
+	file, err := ioutil.ReadFile(path)
 	if err != nil {
 		log.Fatal(err)
 	}
