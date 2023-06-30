@@ -1,6 +1,11 @@
 package presenter
 
-import "github.com/hajimehoshi/ebiten"
+import (
+	"game/domain"
+	"image/color"
+
+	"github.com/hajimehoshi/ebiten"
+)
 
 const (
 	screenWidth  = 320
@@ -8,15 +13,19 @@ const (
 )
 
 type GameEngine struct {
-	keys []ebiten.Key
+	Context  domain.Context
+	Keyboard Keyboard
 }
 
-func (g *GameEngine) Update(*ebiten.Image) error {
+func (g *GameEngine) Update(screen *ebiten.Image) error {
+	g.Keyboard.Watch()
 	return nil
 }
 
 func (g *GameEngine) Draw(screen *ebiten.Image) {
-
+	if g.Keyboard.UpPressed() {
+		screen.Fill(color.White)
+	}
 }
 
 func (g *GameEngine) Layout(outsideWidth, outsideHeight int) (int, int) {

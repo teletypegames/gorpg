@@ -14,7 +14,12 @@ type Presenter struct {
 func (p Presenter) Init() {
 	ebiten.SetWindowSize(screenWidth*2, screenHeight*2)
 	ebiten.SetWindowTitle("Game")
-	if err := ebiten.RunGame(&GameEngine{}); err != nil {
+	if err := ebiten.RunGame(&GameEngine{
+		Context: p.Context,
+		Keyboard: Keyboard{
+			KeyMap: CreateDefaultKeyMap(),
+		},
+	}); err != nil {
 		log.Fatal(err)
 	}
 }
