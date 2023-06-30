@@ -1,8 +1,8 @@
 package main
 
 import (
-	"game/constructor"
 	"game/domain"
+	"game/konstructor"
 
 	"github.com/hajimehoshi/ebiten"
 )
@@ -18,10 +18,10 @@ func main() {
 			},
 		},
 	}
-	constructor := constructor.Constructor{
+	konstructor := konstructor.Konstructor{
 		Domain: domain,
-		Controller: constructor.Controller{
-			KeyMap: constructor.KeyMap{
+		Controller: konstructor.Controller{
+			KeyMap: konstructor.KeyMap{
 				Up:      ebiten.KeyUp,
 				Down:    ebiten.KeyDown,
 				Right:   ebiten.KeyRight,
@@ -32,13 +32,13 @@ func main() {
 				Action3: ebiten.KeyEscape,
 			},
 		},
-		GameSettings: constructor.GameSettings{
+		GameSettings: konstructor.GameSettings{
 			Name: "Game",
-			ScreenSettings: constructor.ScreenSettings{
+			ScreenSettings: konstructor.ScreenSettings{
 				Width:  640,
 				Height: 480,
 			},
 		},
 	}
-	constructor.Init()
+	konstructor.Init()
 }

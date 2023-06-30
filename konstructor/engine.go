@@ -1,4 +1,4 @@
-package constructor
+package konstructor
 
 import (
 	"image/color"
@@ -7,20 +7,20 @@ import (
 )
 
 type GameEngine struct {
-	Constructor Constructor
+	Konstructor Konstructor
 }
 
 func (g *GameEngine) Update(screen *ebiten.Image) error {
-	g.Constructor.Controller.Watch()
+	g.Konstructor.Controller.Watch()
 	return nil
 }
 
 func (g *GameEngine) Draw(screen *ebiten.Image) {
-	if g.Constructor.Controller.UpPressed() {
+	if g.Konstructor.Controller.UpPressed() {
 		screen.Fill(color.White)
 	}
 }
 
 func (g *GameEngine) Layout(outsideWidth, outsideHeight int) (int, int) {
-	return g.Constructor.GameSettings.ScreenSettings.Width, g.Constructor.GameSettings.ScreenSettings.Height
+	return g.Konstructor.GameSettings.ScreenSettings.Width, g.Konstructor.GameSettings.ScreenSettings.Height
 }

@@ -1,4 +1,4 @@
-package constructor
+package konstructor
 
 import (
 	"log"
@@ -23,18 +23,18 @@ type GameSettings struct {
 	ScreenSettings ScreenSettings
 }
 
-type Constructor struct {
+type Konstructor struct {
 	Context      ContextInterface
 	Domain       DomainInterface
 	Controller   Controller
 	GameSettings GameSettings
 }
 
-func (c Constructor) Init() {
-	ebiten.SetWindowSize(c.GameSettings.ScreenSettings.Width, c.GameSettings.ScreenSettings.Height)
-	ebiten.SetWindowTitle(c.GameSettings.Name)
+func (k Konstructor) Init() {
+	ebiten.SetWindowSize(k.GameSettings.ScreenSettings.Width, k.GameSettings.ScreenSettings.Height)
+	ebiten.SetWindowTitle(k.GameSettings.Name)
 	if err := ebiten.RunGame(&GameEngine{
-		Constructor: c,
+		Konstructor: k,
 	}); err != nil {
 		log.Fatal(err)
 	}
