@@ -1,12 +1,11 @@
 package domain
 
-type Screen struct {
-}
+import "game/konstructor"
 
-type ScreenManager struct {
+type PlaygroundManager struct {
 	Context Context
 }
 
-func (sm ScreenManager) GetCurrent() Screen {
-	return Screen{}
+func (pm PlaygroundManager) GetCurrent() konstructor.Playground {
+	return konstructor.Playground{}
 }

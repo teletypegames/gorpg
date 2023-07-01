@@ -10,6 +10,7 @@ type ContextInterface interface {
 }
 
 type DomainInterface interface {
+	GetMenuMap() MenuMap
 	Init()
 }
 

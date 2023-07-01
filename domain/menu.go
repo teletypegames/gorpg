@@ -1,54 +1,61 @@
 package domain
 
-type MenuItem struct {
-	ID      string
-	Label   string
-	Handler func()
-}
+import (
+	"game/konstructor"
+	"os"
+)
 
-type Menu struct {
-	MenuItems []MenuItem
-}
+func (d Domain) GetMenuMap() konstructor.MenuMap {
 
-type MenuManager struct {
-	MainMenu Menu
-	GameMenu Menu
-}
-
-func createMenu(menuItems []MenuItem) Menu {
-	menu := Menu{
-		MenuItems: menuItems,
+	return map[string]konstructor.Menu{
+		"MainMenu": {
+			MenuItems: []konstructor.MenuItem{
+				{
+					ID:      "new",
+					Label:   "New Game",
+					Handler: d.StartGame,
+				},
+				{
+					ID:      "load",
+					Label:   "Load Game",
+					Handler: d.LoadtGame,
+				},
+				{
+					ID:      "exit",
+					Label:   "Exit Game",
+					Handler: d.ExitGame,
+				},
+			},
+		},
+		"GameMenu": {
+			MenuItems: []konstructor.MenuItem{
+				{
+					ID:      "save",
+					Label:   "Save Game",
+					Handler: d.SaveGame,
+				},
+				{
+					ID:      "close",
+					Label:   "Close Game",
+					Handler: d.CloseGame,
+				},
+			},
+		},
 	}
-	return menu
 }
 
-func (mm MenuManager) Init() {
+func (d *Domain) CloseGame() {
+}
 
-	mo := MenuOperation{}
+func (d *Domain) LoadtGame() {
+}
 
-	mm.MainMenu = createMenu([]MenuItem{
-		{
-			ID:      "new",
-			Label:   "New Game",
-			Handler: mo.StartGame,
-		},
-		{
-			ID:      "load",
-			Label:   "Load Game",
-			Handler: mo.LoadtGame,
-		},
-	})
+func (d *Domain) SaveGame() {
+}
 
-	mm.GameMenu = createMenu([]MenuItem{
-		{
-			ID:      "save",
-			Label:   "Save Game",
-			Handler: mo.SaveGame,
-		},
-		{
-			ID:      "close",
-			Label:   "Close Game",
-			Handler: mo.CloseGame,
-		},
-	})
+func (d *Domain) StartGame() {
+}
+
+func (d *Domain) ExitGame() {
+	os.Exit(1)
 }
