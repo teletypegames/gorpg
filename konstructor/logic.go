@@ -7,14 +7,16 @@ import (
 )
 
 type Logic struct {
-	Konstructor *Konstructor
+	Domain     DomainInterface
+	Controller *Controller
+	Settings   *Settings
 }
 
 func (l *Logic) Update(screen *ebiten.Image) {
 }
 
 func (l *Logic) Draw(screen *ebiten.Image) {
-	if l.Konstructor.Controller.UpPressed() {
+	if l.Controller.UpPressed() {
 		screen.Fill(color.White)
 	}
 }

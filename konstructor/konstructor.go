@@ -34,9 +34,10 @@ func (k Konstructor) Init() {
 	ebiten.SetWindowSize(k.Settings.Screen.Width, k.Settings.Screen.Height)
 	ebiten.SetWindowTitle(k.Settings.Name)
 	if err := ebiten.RunGame(&Engine{
-		Konstructor: &k,
 		Logic: &Logic{
-			Konstructor: &k,
+			Domain:     k.Domain,
+			Controller: k.Controller,
+			Settings:   k.Settings,
 		},
 	}); err != nil {
 		log.Fatal(err)
