@@ -10,13 +10,21 @@ type ContextInterface interface {
 }
 
 type DomainInterface interface {
-	GetMenuMap() MenuMap
 	Init()
 }
 
 type ScreenSettings struct {
 	Width  int
 	Height int
+}
+
+type KContextScreen struct {
+	Type  string
+	Value string
+}
+
+type KContext struct {
+	Screen KContextScreen
 }
 
 type Settings struct {
@@ -28,17 +36,20 @@ type Konstructor struct {
 	Domain     DomainInterface
 	Controller *Controller
 	Settings   *Settings
+	KContext   *KContext
+	MenuMap    MenuMap
 }
 
 func (k Konstructor) Init() {
+	k.Domain.Init()
 	ebiten.SetWindowSize(k.Settings.Screen.Width, k.Settings.Screen.Height)
 	ebiten.SetWindowTitle(k.Settings.Name)
 	if err := ebiten.RunGame(&Engine{
-		Logic: &Logic{
-			Domain:     k.Domain,
-			Controller: k.Controller,
-			Settings:   k.Settings,
-		},
+		MenuMap:    k.MenuMap,
+		KContext:   k.KContext,
+		Domain:     k.Domain,
+		Controller: k.Controller,
+		Settings:   k.Settings,
 	}); err != nil {
 		log.Fatal(err)
 	}

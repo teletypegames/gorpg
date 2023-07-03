@@ -4,6 +4,8 @@ type MenuMap map[string]Menu
 
 type MenuLayout struct {
 	Background string
+	DPI        float64
+	Size       float64
 }
 
 type MenuItem struct {
@@ -13,6 +15,7 @@ type MenuItem struct {
 }
 
 type Menu struct {
-	MenuLayout MenuLayout
-	MenuItems  []MenuItem
+	CurrentSelected int
+	MenuLayout      MenuLayout
+	MenuItems       []MenuItem
 }
