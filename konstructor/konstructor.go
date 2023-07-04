@@ -2,7 +2,6 @@ package konstructor
 
 import (
 	"game/konstructor/entity"
-	"log"
 
 	"github.com/hajimehoshi/ebiten"
 )
@@ -28,14 +27,20 @@ type Konstructor struct {
 
 func (k Konstructor) Init() {
 	k.Domain.Init()
+	k.SetWindow()
+	k.Run()
+}
+
+func (k Konstructor) SetWindow() {
 	ebiten.SetWindowSize(k.Settings.Screen.Width, k.Settings.Screen.Height)
 	ebiten.SetWindowTitle(k.Settings.Name)
-	if err := ebiten.RunGame(&Engine{
+}
+
+func (k Konstructor) Run() {
+	ebiten.RunGame(&Engine{
 		KContext:   k.KContext,
 		Domain:     k.Domain,
 		Controller: k.Controller,
 		Settings:   k.Settings,
-	}); err != nil {
-		log.Fatal(err)
-	}
+	})
 }
