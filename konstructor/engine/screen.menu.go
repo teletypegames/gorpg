@@ -1,4 +1,4 @@
-package konstructor
+package engine
 
 import (
 	"github.com/hajimehoshi/ebiten"

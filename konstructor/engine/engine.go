@@ -1,4 +1,4 @@
-package konstructor
+package engine
 
 import (
 	"game/konstructor/entity"
@@ -8,7 +8,7 @@ import (
 )
 
 type Engine struct {
-	Domain     DomainInterface
+	Domain     entity.DomainInterface
 	Controller *Controller
 	Settings   *entity.Settings
 	KContext   *entity.KContext

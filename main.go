@@ -3,6 +3,7 @@ package main
 import (
 	"game/domain"
 	"game/konstructor"
+	"game/konstructor/engine"
 	"game/konstructor/entity"
 
 	"github.com/hajimehoshi/ebiten"
@@ -27,7 +28,7 @@ func main() {
 				},
 			},
 		},
-		Controller: &konstructor.Controller{
+		Controller: &engine.Controller{
 			KeyMap: entity.KeyMap{
 				Up:      ebiten.KeyUp,
 				Down:    ebiten.KeyDown,
