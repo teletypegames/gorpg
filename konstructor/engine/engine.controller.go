@@ -9,7 +9,7 @@ import (
 )
 
 func (e *Engine) WatchKeyPress() {
-	values := reflect.ValueOf(e.KeyMap)
+	values := reflect.ValueOf(e.Settings.KeyMap)
 
 	for i := 0; i < values.NumField(); i++ {
 		key := values.Field(i).Interface().(ebiten.Key)
@@ -25,33 +25,33 @@ func (e *Engine) ClearKeyPresed() {
 }
 
 func (e *Engine) UpPressed() bool {
-	return e.PressedKey == e.KeyMap.Up
+	return e.PressedKey == e.Settings.KeyMap.Up
 }
 
 func (e *Engine) DownPressed() bool {
-	return e.PressedKey == e.KeyMap.Down
+	return e.PressedKey == e.Settings.KeyMap.Down
 }
 
 func (e *Engine) RightPressed() bool {
-	return e.PressedKey == e.KeyMap.Right
+	return e.PressedKey == e.Settings.KeyMap.Right
 }
 
 func (e *Engine) LeftPressed() bool {
-	return e.PressedKey == e.KeyMap.Left
+	return e.PressedKey == e.Settings.KeyMap.Left
 }
 
 func (e *Engine) Action0Pressed() bool {
-	return e.PressedKey == e.KeyMap.Action0
+	return e.PressedKey == e.Settings.KeyMap.Action0
 }
 
 func (e *Engine) Action1Pressed() bool {
-	return e.PressedKey == e.KeyMap.Action1
+	return e.PressedKey == e.Settings.KeyMap.Action1
 }
 
 func (e *Engine) Action2Pressed() bool {
-	return e.PressedKey == e.KeyMap.Action2
+	return e.PressedKey == e.Settings.KeyMap.Action2
 }
 
 func (e *Engine) Action3Pressed() bool {
-	return e.PressedKey == e.KeyMap.Action3
+	return e.PressedKey == e.Settings.KeyMap.Action3
 }

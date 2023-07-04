@@ -27,21 +27,21 @@ func main() {
 				},
 			},
 		},
-		KeyMap: entity.KeyMap{
-			Up:      ebiten.KeyUp,
-			Down:    ebiten.KeyDown,
-			Right:   ebiten.KeyRight,
-			Left:    ebiten.KeyLeft,
-			Action0: ebiten.KeySpace,
-			Action1: ebiten.KeyAlt,
-			Action2: ebiten.KeyControl,
-			Action3: ebiten.KeyEscape,
-		},
 		Settings: &entity.Settings{
 			Name: "Game",
 			Screen: &entity.ScreenSettings{
 				Width:  640,
 				Height: 480,
+			},
+			KeyMap: &entity.KeyMap{
+				Up:      ebiten.KeyUp,
+				Down:    ebiten.KeyDown,
+				Right:   ebiten.KeyRight,
+				Left:    ebiten.KeyLeft,
+				Action0: ebiten.KeySpace,
+				Action1: ebiten.KeyAlt,
+				Action2: ebiten.KeyControl,
+				Action3: ebiten.KeyEscape,
 			},
 		},
 	}

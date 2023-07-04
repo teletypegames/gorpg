@@ -9,7 +9,6 @@ import (
 
 type Konstructor struct {
 	Domain   entity.DomainInterface
-	KeyMap   entity.KeyMap
 	Settings *entity.Settings
 	KContext *entity.KContext
 }
@@ -29,7 +28,6 @@ func (k Konstructor) Run() {
 	ebiten.RunGame(&engine.Engine{
 		KContext: k.KContext,
 		Domain:   k.Domain,
-		KeyMap:   k.KeyMap,
 		Settings: k.Settings,
 	})
 }

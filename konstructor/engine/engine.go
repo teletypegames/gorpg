@@ -11,7 +11,6 @@ type Engine struct {
 	Domain     entity.DomainInterface
 	Settings   *entity.Settings
 	KContext   *entity.KContext
-	KeyMap     entity.KeyMap
 	PressedKey ebiten.Key
 }
 
