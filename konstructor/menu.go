@@ -13,9 +13,11 @@ import (
 type MenuMap map[string]Menu
 
 type MenuLayout struct {
-	Background string
-	DPI        float64
-	Size       float64
+	Background    string
+	DPI           float64
+	Size          float64
+	Color         color.Color
+	SelectedColor color.Color
 }
 
 type MenuItem struct {
@@ -37,22 +39,24 @@ func (e *Engine) MenuDraw(screen *ebiten.Image) {
 	for i, menu_item := range menu.MenuItems {
 		var c color.Color
 		if menu.CurrentSelected == i {
-			c = color.RGBA{R: 0, G: 255, B: 0, A: 100}
+			c = menu.MenuLayout.SelectedColor
 		} else {
-			c = color.White
+			c = menu.MenuLayout.Color
 		}
-		text.Draw(screen, menu_item.Label+"\n", face, 8, 24*(i+1), c)
+		offset := int(menu.MenuLayout.Size) * (i + 1)
+		text.Draw(screen, menu_item.Label+"\n", face, 8, offset, c)
 	}
 }
 
 func (e *Engine) MenuUpdate() {
 	menu := e.MenuMap[e.KContext.Screen.Value]
-	if e.Controller.DownPressed() && menu.CurrentSelected != len(menu.MenuItems)-1 {
-		menu.CurrentSelected++
-	}
 
 	if e.Controller.UpPressed() && menu.CurrentSelected != 0 {
 		menu.CurrentSelected--
+	}
+
+	if e.Controller.DownPressed() && menu.CurrentSelected != len(menu.MenuItems)-1 {
+		menu.CurrentSelected++
 	}
 
 	if e.Controller.Action0Pressed() {

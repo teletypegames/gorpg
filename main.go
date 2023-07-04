@@ -3,6 +3,7 @@ package main
 import (
 	"game/domain"
 	"game/konstructor"
+	"image/color"
 
 	"github.com/hajimehoshi/ebiten"
 )
@@ -32,8 +33,10 @@ func main() {
 			"MainMenu": {
 				CurrentSelected: 0,
 				MenuLayout: konstructor.MenuLayout{
-					DPI:  72,
-					Size: 24,
+					DPI:           72,
+					Size:          24,
+					Color:         color.White,
+					SelectedColor: color.RGBA{R: 0, G: 255, B: 0, A: 100},
 				},
 				MenuItems: []konstructor.MenuItem{
 					{
@@ -56,8 +59,10 @@ func main() {
 			"GameMenu": {
 				CurrentSelected: 0,
 				MenuLayout: konstructor.MenuLayout{
-					DPI:  72,
-					Size: 24,
+					DPI:           72,
+					Size:          24,
+					Color:         color.White,
+					SelectedColor: color.RGBA{R: 0, G: 255, B: 0, A: 100},
 				},
 				MenuItems: []konstructor.MenuItem{
 					{
