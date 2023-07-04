@@ -12,8 +12,8 @@ func main() {
 	k := konstructor.Konstructor{
 		KContext: &konstructor.KContext{
 			Screen: konstructor.KContextScreen{
-				Type:  "menu",
-				Value: "MainMenu",
+				Type:  "dialog",
+				Value: "TestDialog",
 			},
 		},
 		Domain: &domain.Domain{

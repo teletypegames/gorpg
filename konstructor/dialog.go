@@ -7,6 +7,8 @@ import (
 	"github.com/hajimehoshi/ebiten/text"
 )
 
+type DialogMap map[string]Dialog
+
 type DialogLayout struct {
 	Background string
 	ChoiceFont FontLayout
@@ -33,7 +35,7 @@ func (dialog *Dialog) GetChoiceColor(i int) color.Color {
 }
 
 func (e *Engine) DialogDraw(screen *ebiten.Image) {
-	dialog := e.Domain.GetDialog()
+	dialog := e.Domain.GetDialog(e.KContext.Screen.Value)
 
 	face := GetFontFace(dialog.Layout.ChoiceFont)
 
@@ -44,7 +46,7 @@ func (e *Engine) DialogDraw(screen *ebiten.Image) {
 }
 
 func (e *Engine) DialogUpdate() {
-	dialog := e.Domain.GetDialog()
+	dialog := e.Domain.GetDialog(e.KContext.Screen.Value)
 
 	if e.Controller.UpPressed() && dialog.CurrentSelected != 0 {
 		dialog.CurrentSelected--
@@ -57,4 +59,5 @@ func (e *Engine) DialogUpdate() {
 	if e.Controller.Action0Pressed() {
 		dialog.Choices[dialog.CurrentSelected].Handler()
 	}
+	e.Domain.SetDialog(e.KContext.Screen.Value, dialog)
 }
