@@ -35,7 +35,7 @@ func (menu *Menu) GetMenuItemColor(i int) color.Color {
 }
 
 func (e *Engine) MenuDraw(screen *ebiten.Image) {
-	menu := e.MenuMap[e.KContext.Screen.Value]
+	menu := e.Domain.GetMenu(e.KContext.Screen.Value)
 	face := GetFontFace(menu.Layout.MenuItemFont)
 
 	for i, menu_item := range menu.MenuItems {
@@ -46,7 +46,7 @@ func (e *Engine) MenuDraw(screen *ebiten.Image) {
 }
 
 func (e *Engine) MenuUpdate() {
-	menu := e.MenuMap[e.KContext.Screen.Value]
+	menu := e.Domain.GetMenu(e.KContext.Screen.Value)
 
 	if e.Controller.UpPressed() && menu.CurrentSelected != 0 {
 		menu.CurrentSelected--
@@ -60,5 +60,5 @@ func (e *Engine) MenuUpdate() {
 		menu.MenuItems[menu.CurrentSelected].Handler()
 	}
 
-	e.MenuMap[e.KContext.Screen.Value] = menu
+	e.Domain.SetMenu(e.KContext.Screen.Value, menu)
 }

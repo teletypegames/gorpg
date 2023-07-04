@@ -11,6 +11,8 @@ type ContextInterface interface {
 
 type DomainInterface interface {
 	Init()
+	GetMenu(name string) Menu
+	SetMenu(name string, menu Menu)
 	GetDialog() Dialog
 }
 
@@ -29,7 +31,6 @@ type Konstructor struct {
 	Controller *Controller
 	Settings   *Settings
 	KContext   *KContext
-	MenuMap    MenuMap
 }
 
 func (k Konstructor) Init() {
@@ -37,7 +38,6 @@ func (k Konstructor) Init() {
 	ebiten.SetWindowSize(k.Settings.Screen.Width, k.Settings.Screen.Height)
 	ebiten.SetWindowTitle(k.Settings.Name)
 	if err := ebiten.RunGame(&Engine{
-		MenuMap:    k.MenuMap,
 		KContext:   k.KContext,
 		Domain:     k.Domain,
 		Controller: k.Controller,

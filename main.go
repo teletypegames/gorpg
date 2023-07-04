@@ -3,81 +3,26 @@ package main
 import (
 	"game/domain"
 	"game/konstructor"
-	"image/color"
 
 	"github.com/hajimehoshi/ebiten"
 )
 
 func main() {
 
-	d := domain.Domain{
-		Context: domain.Context{
-			Player: domain.Player{
-				Name: "Player One",
-			},
-			User: domain.User{
-				Name: "John Doe",
-			},
-		},
-	}
-
 	k := konstructor.Konstructor{
 		KContext: &konstructor.KContext{
 			Screen: konstructor.KContextScreen{
-				Type: "dialog",
+				Type:  "menu",
+				Value: "MainMenu",
 			},
 		},
-		Domain: &d,
-		MenuMap: konstructor.MenuMap{
-			"MainMenu": {
-				CurrentSelected: 0,
-				Layout: konstructor.MenuLayout{
-					MenuItemFont: konstructor.FontLayout{
-						DPI:           72,
-						Size:          24,
-						Color:         color.White,
-						SelectedColor: color.RGBA{R: 0, G: 255, B: 0, A: 100},
-					},
+		Domain: &domain.Domain{
+			Context: domain.Context{
+				Player: domain.Player{
+					Name: "Player One",
 				},
-				MenuItems: []konstructor.MenuItem{
-					{
-						ID:      "start",
-						Label:   "Start Game",
-						Handler: d.StartGame,
-					},
-					{
-						ID:      "load",
-						Label:   "Load Game",
-						Handler: d.LoadtGame,
-					},
-					{
-						ID:      "exit",
-						Label:   "Exit Game",
-						Handler: d.ExitGame,
-					},
-				},
-			},
-			"GameMenu": {
-				CurrentSelected: 0,
-				Layout: konstructor.MenuLayout{
-					MenuItemFont: konstructor.FontLayout{
-						DPI:           72,
-						Size:          24,
-						Color:         color.White,
-						SelectedColor: color.RGBA{R: 0, G: 255, B: 0, A: 100},
-					},
-				},
-				MenuItems: []konstructor.MenuItem{
-					{
-						ID:      "save",
-						Label:   "Save Game",
-						Handler: d.SaveGame,
-					},
-					{
-						ID:      "close",
-						Label:   "Close Game",
-						Handler: d.CloseGame,
-					},
+				User: domain.User{
+					Name: "John Doe",
 				},
 			},
 		},

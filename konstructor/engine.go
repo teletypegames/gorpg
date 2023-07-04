@@ -11,7 +11,6 @@ type Engine struct {
 	Controller *Controller
 	Settings   *Settings
 	KContext   *KContext
-	MenuMap    MenuMap
 }
 
 func (e *Engine) Layout(outsideWidth, outsideHeight int) (int, int) {

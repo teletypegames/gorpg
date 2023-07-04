@@ -7,9 +7,11 @@ import (
 
 type Domain struct {
 	Context Context
+	MenuMap konstructor.MenuMap
 }
 
 func (d *Domain) Init() {
+	d.InitMenu()
 }
 
 func (d *Domain) GetDialog() konstructor.Dialog {
