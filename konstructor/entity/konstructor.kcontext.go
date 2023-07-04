@@ -1,4 +1,4 @@
-package konstructor
+package entity
 
 type KContextScreen struct {
 	Type  string

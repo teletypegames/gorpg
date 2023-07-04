@@ -3,15 +3,15 @@ package main
 import (
 	"game/domain"
 	"game/konstructor"
+	"game/konstructor/entity"
 
 	"github.com/hajimehoshi/ebiten"
 )
 
 func main() {
-
 	k := konstructor.Konstructor{
-		KContext: &konstructor.KContext{
-			Screen: konstructor.KContextScreen{
+		KContext: &entity.KContext{
+			Screen: entity.KContextScreen{
 				Type:  "playground",
 				Value: "",
 			},
@@ -28,7 +28,7 @@ func main() {
 			},
 		},
 		Controller: &konstructor.Controller{
-			KeyMap: konstructor.KeyMap{
+			KeyMap: entity.KeyMap{
 				Up:      ebiten.KeyUp,
 				Down:    ebiten.KeyDown,
 				Right:   ebiten.KeyRight,
@@ -39,9 +39,9 @@ func main() {
 				Action3: ebiten.KeyEscape,
 			},
 		},
-		Settings: &konstructor.Settings{
+		Settings: &entity.Settings{
 			Name: "Game",
-			Screen: &konstructor.ScreenSettings{
+			Screen: &entity.ScreenSettings{
 				Width:  640,
 				Height: 480,
 			},

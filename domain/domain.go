@@ -1,14 +1,14 @@
 package domain
 
 import (
-	"game/konstructor"
+	"game/konstructor/entity"
 )
 
 type Domain struct {
 	Context   Context
-	MenuMap   konstructor.MenuMap
-	DialogMap konstructor.DialogMap
-	Levels    []konstructor.Level
+	MenuMap   entity.MenuMap
+	DialogMap entity.DialogMap
+	Levels    []entity.Level
 }
 
 func (d *Domain) Init() {

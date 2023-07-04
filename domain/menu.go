@@ -2,24 +2,24 @@ package domain
 
 import (
 	"fmt"
-	"game/konstructor"
+	"game/konstructor/entity"
 	"image/color"
 	"os"
 )
 
 func (d *Domain) InitMenu() {
-	d.MenuMap = konstructor.MenuMap{
+	d.MenuMap = entity.MenuMap{
 		"MainMenu": {
 			CurrentSelected: 0,
-			Layout: konstructor.MenuLayout{
-				MenuItemFont: konstructor.FontLayout{
+			Layout: entity.MenuLayout{
+				MenuItemFont: entity.FontLayout{
 					DPI:           72,
 					Size:          24,
 					Color:         color.White,
 					SelectedColor: color.RGBA{R: 0, G: 255, B: 0, A: 100},
 				},
 			},
-			MenuItems: []konstructor.MenuItem{
+			MenuItems: []entity.MenuItem{
 				{
 					ID:      "start",
 					Label:   "Start Game",
@@ -39,15 +39,15 @@ func (d *Domain) InitMenu() {
 		},
 		"GameMenu": {
 			CurrentSelected: 0,
-			Layout: konstructor.MenuLayout{
-				MenuItemFont: konstructor.FontLayout{
+			Layout: entity.MenuLayout{
+				MenuItemFont: entity.FontLayout{
 					DPI:           72,
 					Size:          24,
 					Color:         color.White,
 					SelectedColor: color.RGBA{R: 0, G: 255, B: 0, A: 100},
 				},
 			},
-			MenuItems: []konstructor.MenuItem{
+			MenuItems: []entity.MenuItem{
 				{
 					ID:      "save",
 					Label:   "Save Game",
@@ -63,12 +63,12 @@ func (d *Domain) InitMenu() {
 	}
 }
 
-func (d *Domain) GetMenu(name string) konstructor.Menu {
+func (d *Domain) GetMenu(name string) entity.Menu {
 	value, _ := d.MenuMap[name]
 	return value
 }
 
-func (d *Domain) SetMenu(name string, menu konstructor.Menu) {
+func (d *Domain) SetMenu(name string, menu entity.Menu) {
 	d.MenuMap[name] = menu
 }
 

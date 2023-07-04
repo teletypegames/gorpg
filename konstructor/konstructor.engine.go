@@ -1,6 +1,7 @@
 package konstructor
 
 import (
+	"game/konstructor/entity"
 	"os"
 
 	"github.com/hajimehoshi/ebiten"
@@ -9,8 +10,8 @@ import (
 type Engine struct {
 	Domain     DomainInterface
 	Controller *Controller
-	Settings   *Settings
-	KContext   *KContext
+	Settings   *entity.Settings
+	KContext   *entity.KContext
 }
 
 func (e *Engine) Layout(outsideWidth, outsideHeight int) (int, int) {

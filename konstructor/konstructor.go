@@ -1,6 +1,7 @@
 package konstructor
 
 import (
+	"game/konstructor/entity"
 	"log"
 
 	"github.com/hajimehoshi/ebiten"
@@ -11,28 +12,18 @@ type ContextInterface interface {
 
 type DomainInterface interface {
 	Init()
-	GetMenu(name string) Menu
-	SetMenu(name string, menu Menu)
-	GetDialog(name string) Dialog
-	SetDialog(name string, menu Dialog)
-	GetLevel(index int) Level
-}
-
-type ScreenSettings struct {
-	Width  int
-	Height int
-}
-
-type Settings struct {
-	Name   string
-	Screen *ScreenSettings
+	GetMenu(name string) entity.Menu
+	SetMenu(name string, menu entity.Menu)
+	GetDialog(name string) entity.Dialog
+	SetDialog(name string, menu entity.Dialog)
+	GetLevel(index int) entity.Level
 }
 
 type Konstructor struct {
 	Domain     DomainInterface
 	Controller *Controller
-	Settings   *Settings
-	KContext   *KContext
+	Settings   *entity.Settings
+	KContext   *entity.KContext
 }
 
 func (k Konstructor) Init() {
