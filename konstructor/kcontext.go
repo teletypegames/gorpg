@@ -6,5 +6,6 @@ type KContextScreen struct {
 }
 
 type KContext struct {
-	Screen KContextScreen
+	Screen       KContextScreen
+	CurrentLevel int
 }

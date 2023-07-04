@@ -4,11 +4,12 @@ type User struct {
 	Name string
 }
 
-type Player struct {
+type PlayerState struct {
 	Name string
 }
 
 type Context struct {
-	Player Player
-	User   User
+	PlayerState PlayerState
+	User        User
+	Level       int
 }

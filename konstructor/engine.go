@@ -29,6 +29,9 @@ func (e *Engine) Update(screen *ebiten.Image) error {
 	if e.ScreenTypeIs("dialog") {
 		e.DialogUpdate()
 	}
+	if e.ScreenTypeIs("playground") {
+		e.PlaygroundUpdate()
+	}
 	return nil
 }
 
@@ -38,6 +41,9 @@ func (e *Engine) Draw(screen *ebiten.Image) {
 	}
 	if e.ScreenTypeIs("dialog") {
 		e.DialogDraw(screen)
+	}
+	if e.ScreenTypeIs("playground") {
+		e.PlaygroundDraw(screen)
 	}
 	if e.Controller.Action3Pressed() {
 		os.Exit(1)

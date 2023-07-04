@@ -12,13 +12,14 @@ func main() {
 	k := konstructor.Konstructor{
 		KContext: &konstructor.KContext{
 			Screen: konstructor.KContextScreen{
-				Type:  "dialog",
-				Value: "TestDialog",
+				Type:  "playground",
+				Value: "",
 			},
+			CurrentLevel: 0,
 		},
 		Domain: &domain.Domain{
 			Context: domain.Context{
-				Player: domain.Player{
+				PlayerState: domain.PlayerState{
 					Name: "Player One",
 				},
 				User: domain.User{
