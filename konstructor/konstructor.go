@@ -8,10 +8,10 @@ import (
 )
 
 type Konstructor struct {
-	Domain     entity.DomainInterface
-	Controller *engine.Controller
-	Settings   *entity.Settings
-	KContext   *entity.KContext
+	Domain   entity.DomainInterface
+	KeyMap   entity.KeyMap
+	Settings *entity.Settings
+	KContext *entity.KContext
 }
 
 func (k Konstructor) Init() {
@@ -27,9 +27,9 @@ func (k Konstructor) SetWindow() {
 
 func (k Konstructor) Run() {
 	ebiten.RunGame(&engine.Engine{
-		KContext:   k.KContext,
-		Domain:     k.Domain,
-		Controller: k.Controller,
-		Settings:   k.Settings,
+		KContext: k.KContext,
+		Domain:   k.Domain,
+		KeyMap:   k.KeyMap,
+		Settings: k.Settings,
 	})
 }

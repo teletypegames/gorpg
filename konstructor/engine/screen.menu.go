@@ -19,15 +19,15 @@ func (e *Engine) MenuDraw(screen *ebiten.Image) {
 func (e *Engine) MenuUpdate() {
 	menu := e.Domain.GetMenu(e.KContext.Screen.Value)
 
-	if e.Controller.UpPressed() && menu.CurrentSelected != 0 {
+	if e.UpPressed() && menu.CurrentSelected != 0 {
 		menu.CurrentSelected--
 	}
 
-	if e.Controller.DownPressed() && menu.CurrentSelected != len(menu.MenuItems)-1 {
+	if e.DownPressed() && menu.CurrentSelected != len(menu.MenuItems)-1 {
 		menu.CurrentSelected++
 	}
 
-	if e.Controller.Action0Pressed() {
+	if e.Action0Pressed() {
 		menu.MenuItems[menu.CurrentSelected].Handler()
 	}
 

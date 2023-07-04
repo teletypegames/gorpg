@@ -9,9 +9,10 @@ import (
 
 type Engine struct {
 	Domain     entity.DomainInterface
-	Controller *Controller
 	Settings   *entity.Settings
 	KContext   *entity.KContext
+	KeyMap     entity.KeyMap
+	PressedKey ebiten.Key
 }
 
 func (e *Engine) Layout(outsideWidth, outsideHeight int) (int, int) {
@@ -23,7 +24,7 @@ func (e *Engine) ScreenTypeIs(name string) bool {
 }
 
 func (e *Engine) Update(screen *ebiten.Image) error {
-	e.Controller.Watch()
+	e.WatchKeyPress()
 	if e.ScreenTypeIs("menu") {
 		e.MenuUpdate()
 	}
@@ -46,8 +47,8 @@ func (e *Engine) Draw(screen *ebiten.Image) {
 	if e.ScreenTypeIs("playground") {
 		e.PlaygroundDraw(screen)
 	}
-	if e.Controller.Action3Pressed() {
+	if e.Action3Pressed() {
 		os.Exit(1)
 	}
-	e.Controller.Clear()
+	e.ClearKeyPresed()
 }

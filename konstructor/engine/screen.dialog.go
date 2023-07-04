@@ -19,15 +19,15 @@ func (e *Engine) DialogDraw(screen *ebiten.Image) {
 func (e *Engine) DialogUpdate() {
 	dialog := e.Domain.GetDialog(e.KContext.Screen.Value)
 
-	if e.Controller.UpPressed() && dialog.CurrentSelected != 0 {
+	if e.UpPressed() && dialog.CurrentSelected != 0 {
 		dialog.CurrentSelected--
 	}
 
-	if e.Controller.DownPressed() && dialog.CurrentSelected != len(dialog.Choices)-1 {
+	if e.DownPressed() && dialog.CurrentSelected != len(dialog.Choices)-1 {
 		dialog.CurrentSelected++
 	}
 
-	if e.Controller.Action0Pressed() {
+	if e.Action0Pressed() {
 		dialog.Choices[dialog.CurrentSelected].Handler()
 	}
 	e.Domain.SetDialog(e.KContext.Screen.Value, dialog)
