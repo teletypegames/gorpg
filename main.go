@@ -8,23 +8,26 @@ import (
 )
 
 func main() {
-	konstructor := konstructor.Konstructor{
+
+	d := domain.Domain{
+		Context: domain.Context{
+			Player: domain.Player{
+				Name: "Player One",
+			},
+			User: domain.User{
+				Name: "John Doe",
+			},
+		},
+	}
+
+	k := konstructor.Konstructor{
 		KContext: &konstructor.KContext{
 			Screen: konstructor.KContextScreen{
 				Type:  "menu",
 				Value: "MainMenu",
 			},
 		},
-		Domain: &domain.Domain{
-			Context: domain.Context{
-				Player: domain.Player{
-					Name: "Player One",
-				},
-				User: domain.User{
-					Name: "John Doe",
-				},
-			},
-		},
+		Domain: &d,
 		MenuMap: konstructor.MenuMap{
 			"MainMenu": {
 				CurrentSelected: 0,
@@ -34,16 +37,19 @@ func main() {
 				},
 				MenuItems: []konstructor.MenuItem{
 					{
-						ID:    "new",
-						Label: "New Game",
+						ID:      "start",
+						Label:   "Start Game",
+						Handler: d.StartGame,
 					},
 					{
-						ID:    "load",
-						Label: "Load Game",
+						ID:      "load",
+						Label:   "Load Game",
+						Handler: d.LoadtGame,
 					},
 					{
-						ID:    "exit",
-						Label: "Exit Game",
+						ID:      "exit",
+						Label:   "Exit Game",
+						Handler: d.ExitGame,
 					},
 				},
 			},
@@ -55,12 +61,14 @@ func main() {
 				},
 				MenuItems: []konstructor.MenuItem{
 					{
-						ID:    "save",
-						Label: "Save Game",
+						ID:      "save",
+						Label:   "Save Game",
+						Handler: d.SaveGame,
 					},
 					{
-						ID:    "close",
-						Label: "Close Game",
+						ID:      "close",
+						Label:   "Close Game",
+						Handler: d.CloseGame,
 					},
 				},
 			},
@@ -85,5 +93,5 @@ func main() {
 			},
 		},
 	}
-	konstructor.Init()
+	k.Init()
 }

@@ -55,6 +55,10 @@ func (e *Engine) MenuUpdate() {
 		menu.CurrentSelected--
 	}
 
+	if e.Controller.Action0Pressed() {
+		menu.MenuItems[menu.CurrentSelected].Handler()
+	}
+
 	e.MenuMap[e.KContext.Screen.Value] = menu
 }
 
