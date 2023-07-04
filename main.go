@@ -24,19 +24,20 @@ func main() {
 	k := konstructor.Konstructor{
 		KContext: &konstructor.KContext{
 			Screen: konstructor.KContextScreen{
-				Type:  "menu",
-				Value: "MainMenu",
+				Type: "dialog",
 			},
 		},
 		Domain: &d,
 		MenuMap: konstructor.MenuMap{
 			"MainMenu": {
 				CurrentSelected: 0,
-				MenuLayout: konstructor.MenuLayout{
-					DPI:           72,
-					Size:          24,
-					Color:         color.White,
-					SelectedColor: color.RGBA{R: 0, G: 255, B: 0, A: 100},
+				Layout: konstructor.MenuLayout{
+					MenuItemFont: konstructor.FontLayout{
+						DPI:           72,
+						Size:          24,
+						Color:         color.White,
+						SelectedColor: color.RGBA{R: 0, G: 255, B: 0, A: 100},
+					},
 				},
 				MenuItems: []konstructor.MenuItem{
 					{
@@ -58,11 +59,13 @@ func main() {
 			},
 			"GameMenu": {
 				CurrentSelected: 0,
-				MenuLayout: konstructor.MenuLayout{
-					DPI:           72,
-					Size:          24,
-					Color:         color.White,
-					SelectedColor: color.RGBA{R: 0, G: 255, B: 0, A: 100},
+				Layout: konstructor.MenuLayout{
+					MenuItemFont: konstructor.FontLayout{
+						DPI:           72,
+						Size:          24,
+						Color:         color.White,
+						SelectedColor: color.RGBA{R: 0, G: 255, B: 0, A: 100},
+					},
 				},
 				MenuItems: []konstructor.MenuItem{
 					{

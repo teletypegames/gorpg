@@ -11,20 +11,12 @@ type ContextInterface interface {
 
 type DomainInterface interface {
 	Init()
+	GetDialog() Dialog
 }
 
 type ScreenSettings struct {
 	Width  int
 	Height int
-}
-
-type KContextScreen struct {
-	Type  string
-	Value string
-}
-
-type KContext struct {
-	Screen KContextScreen
 }
 
 type Settings struct {
