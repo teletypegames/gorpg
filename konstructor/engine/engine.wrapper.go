@@ -10,7 +10,7 @@ type EngineWrapper struct {
 	Engine Engine
 }
 
-func (ew *EngineWrapper) Init(options entity.EngineOptions) {
+func (ew *EngineWrapper) Init(options entity.EngineArgs) {
 	ew.Engine = Engine{
 		KContext: options.KContext,
 		Domain:   options.Domain,

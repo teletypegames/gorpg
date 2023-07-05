@@ -11,8 +11,8 @@ type Inventory struct {
 }
 
 type Player struct {
-	ID            string
-	RenderOptions RenderOptions
-	Position      Position
-	Inventory     Inventory
+	ID        string
+	Render    Render
+	Position  Position
+	Inventory Inventory
 }

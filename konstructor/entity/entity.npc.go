@@ -1,8 +1,8 @@
 package entity
 
 type NPCType struct {
-	ID            string
-	RenderOptions RenderOptions
+	ID     string
+	Render Render
 }
 
 type NPC struct {

@@ -1,9 +1,7 @@
 package engine
 
 import (
-	"bytes"
-	"image"
-	"io/ioutil"
+	"game/konstructor/entity"
 	"log"
 
 	_ "image/png"
@@ -11,22 +9,11 @@ import (
 	"github.com/hajimehoshi/ebiten"
 )
 
-func LoadImage(path string) *ebiten.Image {
-
-	file, err := ioutil.ReadFile(path)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	img, _, err := image.Decode(bytes.NewReader(file))
-	if err != nil {
-		log.Fatal(err)
-	}
-
+func (e *Engine) GetImage(render_options entity.Render) *ebiten.Image {
+	img := render_options.GetImage()
 	out, err := ebiten.NewImageFromImage(img, 0)
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	return out
 }

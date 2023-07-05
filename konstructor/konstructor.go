@@ -13,7 +13,7 @@ type Konstructor struct {
 
 func (k Konstructor) Init() {
 	k.Domain.Init()
-	k.EngineWrapper.Init(entity.EngineOptions{
+	k.EngineWrapper.Init(entity.EngineArgs{
 		Domain:   k.Domain,
 		KContext: k.KContext,
 		Settings: k.Settings,

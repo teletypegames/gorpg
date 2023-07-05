@@ -8,7 +8,7 @@ import (
 
 func (e *Engine) PlaygroundUpdate() {
 	level := e.Domain.GetLevel(e.KContext.CurrentLevel)
-	e.Domain.Process(entity.DomainProcessOptions{
+	e.Domain.Process(entity.DomainProcessArgs{
 		Level:    &level,
 		KContext: e.KContext,
 	})

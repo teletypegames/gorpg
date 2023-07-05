@@ -1,12 +1,12 @@
 package entity
 
-type EngineOptions struct {
+type EngineArgs struct {
 	Domain   DomainInterface
 	KContext *KContext
 	Settings *Settings
 }
 
 type EngineWrapperInterface interface {
-	Init(options EngineOptions)
+	Init(options EngineArgs)
 	Run()
 }

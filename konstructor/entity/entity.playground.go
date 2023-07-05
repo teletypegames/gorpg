@@ -6,18 +6,11 @@ type Position struct {
 	Z int
 }
 
-type RenderOptions struct {
-	Image   string
-	Width   int
-	Height  int
-	Visible bool
-}
-
 type Playground struct {
-	Background string
-	Objects    []Object
-	NPCs       []NPC
-	Items      []Item
+	Render  Render
+	Objects []Object
+	NPCs    []NPC
+	Items   []Item
 }
 
 type Level struct {

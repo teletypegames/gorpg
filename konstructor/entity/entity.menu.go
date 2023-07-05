@@ -5,7 +5,6 @@ import "image/color"
 type MenuMap map[string]Menu
 
 type MenuLayout struct {
-	Background   string
 	MenuItemFont FontLayout
 }
 

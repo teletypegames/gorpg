@@ -1,8 +1,8 @@
 package entity
 
 type ItemType struct {
-	ID            string
-	RenderOptions RenderOptions
+	ID     string
+	Render Render
 }
 
 type Item struct {

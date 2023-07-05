@@ -18,11 +18,11 @@ type FontLayout struct {
 
 func (fl *FontLayout) GetFontFace() font.Face {
 	file, _ := ioutil.ReadFile(fl.Path)
-	tt, _ := opentype.Parse(file)
-	face, _ := opentype.NewFace(tt, &opentype.FaceOptions{
+	true_type, _ := opentype.Parse(file)
+	font_face, _ := opentype.NewFace(true_type, &opentype.FaceOptions{
 		Size:    fl.DPI,
 		DPI:     fl.Size,
 		Hinting: font.HintingVertical,
 	})
-	return face
+	return font_face
 }

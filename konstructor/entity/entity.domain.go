@@ -18,10 +18,10 @@ type DomainInterface interface {
 	RemoveFromInventory(item *Item) bool
 	UseInventoryItem(item *Item) bool
 
-	Process(DomainProcessOptions)
+	Process(DomainProcessArgs)
 }
 
-type DomainProcessOptions struct {
+type DomainProcessArgs struct {
 	Level    *Level
 	KContext *KContext
 }

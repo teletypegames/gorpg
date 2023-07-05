@@ -5,7 +5,7 @@ import "image/color"
 type DialogMap map[string]Dialog
 
 type DialogLayout struct {
-	Background string
+	Render     Render
 	ChoiceFont FontLayout
 }
 
