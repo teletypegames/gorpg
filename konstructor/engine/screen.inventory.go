@@ -1,6 +1,16 @@
 package engine
 
-import "game/konstructor/entity"
+import (
+	"game/konstructor/entity"
+
+	"github.com/hajimehoshi/ebiten"
+)
+
+func (e *Engine) InventoryUpdate() {
+}
+
+func (e *Engine) InventoryDraw(screen *ebiten.Image) {
+}
 
 func (e *Engine) AddToInventory(item *entity.Item) {
 	e.Domain.AddToInventory(item)

@@ -29,6 +29,9 @@ func (e *Engine) Update(screen *ebiten.Image) error {
 	if e.KContext.ScreenTypeIs("playground") {
 		e.PlaygroundUpdate()
 	}
+	if e.KContext.ScreenTypeIs("inventory") {
+		e.InventoryUpdate()
+	}
 	return nil
 }
 
@@ -41,6 +44,9 @@ func (e *Engine) Draw(screen *ebiten.Image) {
 	}
 	if e.KContext.ScreenTypeIs("playground") {
 		e.PlaygroundDraw(screen)
+	}
+	if e.KContext.ScreenTypeIs("inventory") {
+		e.InventoryDraw(screen)
 	}
 	if e.Action3Pressed() {
 		os.Exit(1)
