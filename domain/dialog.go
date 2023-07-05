@@ -10,6 +10,7 @@ func (d *Domain) InitDialog() {
 		"TestDialog": {
 			Layout: entity.DialogLayout{
 				ChoiceFont: entity.FontLayout{
+					Path:          "fonts/Arial.ttf",
 					DPI:           72,
 					Size:          24,
 					Color:         color.White,

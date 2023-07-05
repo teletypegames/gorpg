@@ -13,6 +13,7 @@ func (d *Domain) InitMenu() {
 			CurrentSelected: 0,
 			Layout: entity.MenuLayout{
 				MenuItemFont: entity.FontLayout{
+					Path:          "fonts/Arial.ttf",
 					DPI:           72,
 					Size:          24,
 					Color:         color.White,
@@ -41,6 +42,7 @@ func (d *Domain) InitMenu() {
 			CurrentSelected: 0,
 			Layout: entity.MenuLayout{
 				MenuItemFont: entity.FontLayout{
+					Path:          "fonts/Arial.ttf",
 					DPI:           72,
 					Size:          24,
 					Color:         color.White,
