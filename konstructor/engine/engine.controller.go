@@ -25,33 +25,33 @@ func (e *Engine) ClearKeyPresed() {
 }
 
 func (e *Engine) UpPressed() bool {
-	return e.PressedKey == e.Settings.KeyMap.Up
+	return e.PressedKey == e.Settings.KeyMap.Up.(ebiten.Key)
 }
 
 func (e *Engine) DownPressed() bool {
-	return e.PressedKey == e.Settings.KeyMap.Down
+	return e.PressedKey == e.Settings.KeyMap.Down.(ebiten.Key)
 }
 
 func (e *Engine) RightPressed() bool {
-	return e.PressedKey == e.Settings.KeyMap.Right
+	return e.PressedKey == e.Settings.KeyMap.Right.(ebiten.Key)
 }
 
 func (e *Engine) LeftPressed() bool {
-	return e.PressedKey == e.Settings.KeyMap.Left
+	return e.PressedKey == e.Settings.KeyMap.Left.(ebiten.Key)
 }
 
 func (e *Engine) Action0Pressed() bool {
-	return e.PressedKey == e.Settings.KeyMap.Action0
+	return e.PressedKey == e.Settings.KeyMap.Action0.(ebiten.Key)
 }
 
 func (e *Engine) Action1Pressed() bool {
-	return e.PressedKey == e.Settings.KeyMap.Action1
+	return e.PressedKey == e.Settings.KeyMap.Action1.(ebiten.Key)
 }
 
 func (e *Engine) Action2Pressed() bool {
-	return e.PressedKey == e.Settings.KeyMap.Action2
+	return e.PressedKey == e.Settings.KeyMap.Action2.(ebiten.Key)
 }
 
 func (e *Engine) Action3Pressed() bool {
-	return e.PressedKey == e.Settings.KeyMap.Action3
+	return e.PressedKey == e.Settings.KeyMap.Action3.(ebiten.Key)
 }
