@@ -2,20 +2,13 @@ package domain
 
 import (
 	"game/konstructor/entity"
-	"image/color"
 )
 
 func (d *Domain) InitDialog() {
 	d.DialogMap = entity.DialogMap{
 		"TestDialog": {
 			Layout: entity.DialogLayout{
-				ChoiceFont: entity.FontLayout{
-					Path:          "fonts/Arial.ttf",
-					DPI:           72,
-					Size:          24,
-					Color:         color.White,
-					SelectedColor: color.RGBA{R: 0, G: 255, B: 0, A: 100},
-				},
+				ChoiceFont: GetDefaultFontLayout(),
 			},
 			Choices: []entity.DialogChoice{
 				{

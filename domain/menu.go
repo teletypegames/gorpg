@@ -3,7 +3,6 @@ package domain
 import (
 	"fmt"
 	"game/konstructor/entity"
-	"image/color"
 	"os"
 )
 
@@ -12,13 +11,7 @@ func (d *Domain) InitMenu() {
 		"MainMenu": {
 			CurrentSelected: 0,
 			Layout: entity.MenuLayout{
-				MenuItemFont: entity.FontLayout{
-					Path:          "fonts/Arial.ttf",
-					DPI:           72,
-					Size:          24,
-					Color:         color.White,
-					SelectedColor: color.RGBA{R: 0, G: 255, B: 0, A: 100},
-				},
+				MenuItemFont: GetDefaultFontLayout(),
 			},
 			MenuItems: []entity.MenuItem{
 				{
@@ -41,13 +34,7 @@ func (d *Domain) InitMenu() {
 		"GameMenu": {
 			CurrentSelected: 0,
 			Layout: entity.MenuLayout{
-				MenuItemFont: entity.FontLayout{
-					Path:          "fonts/Arial.ttf",
-					DPI:           72,
-					Size:          24,
-					Color:         color.White,
-					SelectedColor: color.RGBA{R: 0, G: 255, B: 0, A: 100},
-				},
+				MenuItemFont: GetDefaultFontLayout(),
 			},
 			MenuItems: []entity.MenuItem{
 				{
