@@ -2,7 +2,6 @@ package engine
 
 import (
 	"bytes"
-	"game/konstructor/entity"
 	"image"
 	"io/ioutil"
 	"log"
@@ -10,8 +9,6 @@ import (
 	_ "image/png"
 
 	"github.com/hajimehoshi/ebiten"
-	"golang.org/x/image/font"
-	"golang.org/x/image/font/opentype"
 )
 
 func LoadImage(path string) *ebiten.Image {
@@ -32,15 +29,4 @@ func LoadImage(path string) *ebiten.Image {
 	}
 
 	return out
-}
-
-func GetFontFace(layout entity.FontLayout) font.Face {
-	file, _ := ioutil.ReadFile(layout.Path)
-	tt, _ := opentype.Parse(file)
-	face, _ := opentype.NewFace(tt, &opentype.FaceOptions{
-		Size:    layout.DPI,
-		DPI:     layout.Size,
-		Hinting: font.HintingVertical,
-	})
-	return face
 }
