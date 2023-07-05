@@ -27,7 +27,7 @@ func main() {
 			ScreenValue:  "MainMenu",
 			CurrentLevel: 0,
 		},
-		Settings: entity.Settings{
+		Settings: &entity.Settings{
 			Name: "Game",
 			Screen: &entity.ScreenSettings{
 				Width:  640,

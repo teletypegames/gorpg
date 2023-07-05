@@ -5,17 +5,6 @@ import (
 	"github.com/hajimehoshi/ebiten/text"
 )
 
-func (e *Engine) DialogDraw(screen *ebiten.Image) {
-	dialog := e.Domain.GetDialog(e.KContext.ScreenValue)
-
-	face := GetFontFace(dialog.Layout.ChoiceFont)
-
-	for i, choice := range dialog.Choices {
-		offset := int(dialog.Layout.ChoiceFont.Size) * (i + 1)
-		text.Draw(screen, choice.Label+"\n", face, 8, offset, dialog.GetChoiceColor(i))
-	}
-}
-
 func (e *Engine) DialogUpdate() {
 	dialog := e.Domain.GetDialog(e.KContext.ScreenValue)
 
@@ -31,4 +20,15 @@ func (e *Engine) DialogUpdate() {
 		dialog.Choices[dialog.CurrentSelected].Handler()
 	}
 	e.Domain.SetDialog(e.KContext.ScreenValue, dialog)
+}
+
+func (e *Engine) DialogDraw(screen *ebiten.Image) {
+	dialog := e.Domain.GetDialog(e.KContext.ScreenValue)
+
+	face := GetFontFace(dialog.Layout.ChoiceFont)
+
+	for i, choice := range dialog.Choices {
+		offset := int(dialog.Layout.ChoiceFont.Size) * (i + 1)
+		text.Draw(screen, choice.Label+"\n", face, 8, offset, dialog.GetChoiceColor(i))
+	}
 }

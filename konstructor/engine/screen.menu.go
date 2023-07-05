@@ -5,17 +5,6 @@ import (
 	"github.com/hajimehoshi/ebiten/text"
 )
 
-func (e *Engine) MenuDraw(screen *ebiten.Image) {
-	menu := e.Domain.GetMenu(e.KContext.ScreenValue)
-	face := GetFontFace(menu.Layout.MenuItemFont)
-
-	for i, menu_item := range menu.MenuItems {
-		color := menu.GetMenuItemColor(i)
-		offset := int(menu.Layout.MenuItemFont.Size) * (i + 1)
-		text.Draw(screen, menu_item.Label+"\n", face, 8, offset, color)
-	}
-}
-
 func (e *Engine) MenuUpdate() {
 	menu := e.Domain.GetMenu(e.KContext.ScreenValue)
 
@@ -32,4 +21,15 @@ func (e *Engine) MenuUpdate() {
 	}
 
 	e.Domain.SetMenu(e.KContext.ScreenValue, menu)
+}
+
+func (e *Engine) MenuDraw(screen *ebiten.Image) {
+	menu := e.Domain.GetMenu(e.KContext.ScreenValue)
+	face := GetFontFace(menu.Layout.MenuItemFont)
+
+	for i, menu_item := range menu.MenuItems {
+		color := menu.GetMenuItemColor(i)
+		offset := int(menu.Layout.MenuItemFont.Size) * (i + 1)
+		text.Draw(screen, menu_item.Label+"\n", face, 8, offset, color)
+	}
 }

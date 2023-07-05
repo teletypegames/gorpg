@@ -12,9 +12,9 @@ type EngineWrapper struct {
 
 func (ew *EngineWrapper) Init(options entity.EngineOptions) {
 	ew.Engine = Engine{
-		KContext: &options.KContext,
+		KContext: options.KContext,
 		Domain:   options.Domain,
-		Settings: &options.Settings,
+		Settings: options.Settings,
 	}
 	ebiten.SetWindowSize(options.Settings.Screen.Width, options.Settings.Screen.Height)
 	ebiten.SetWindowTitle(options.Settings.Name)
