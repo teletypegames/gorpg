@@ -9,7 +9,7 @@ func (d *Domain) InitLevel() {
 			Name: "Level I.",
 			Playgrounds: []entity.Playground{
 				{
-					Background: "level_1_playground_1.png",
+					Background: "assets/images/playgrounds/level_1_playground_1.png",
 					Objects: []entity.Object{
 						{
 							ID: "test_object",
@@ -21,7 +21,7 @@ func (d *Domain) InitLevel() {
 							Type: entity.ObjectType{
 								ID: "test_object_type",
 								RenderOptions: entity.RenderOptions{
-									Image:  "test_object.png",
+									Image:  "assets/images/objects/test_object.png",
 									Width:  30,
 									Height: 30,
 								},

@@ -7,7 +7,7 @@ import (
 
 func GetDefaultFontLayout() entity.FontLayout {
 	return entity.FontLayout{
-		Path:          "fonts/ArcadeClassic.ttf",
+		Path:          "assets/fonts/ArcadeClassic.ttf",
 		DPI:           72,
 		Size:          24,
 		Color:         color.White,
