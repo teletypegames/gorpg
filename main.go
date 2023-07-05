@@ -33,7 +33,7 @@ func main() {
 				Width:  640,
 				Height: 480,
 			},
-			KeyMap: &entity.KeyMap{
+			KeyMap: entity.KeyMap{
 				Up:      ebiten.KeyUp,
 				Down:    ebiten.KeyDown,
 				Right:   ebiten.KeyRight,

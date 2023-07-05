@@ -7,48 +7,10 @@ type Position struct {
 }
 
 type RenderOptions struct {
-	Image  string
-	Width  int
-	Height int
-}
-
-type ObjectType struct {
-	ID            string
-	RenderOptions RenderOptions
-}
-
-type Object struct {
-	ID       string
-	Type     ObjectType
-	Position Position
-}
-
-type NPCType struct {
-	ID            string
-	RenderOptions RenderOptions
-}
-
-type NPC struct {
-	ID       string
-	Type     NPCType
-	Position Position
-}
-
-type Player struct {
-	ID            string
-	RenderOptions RenderOptions
-	Position      Position
-}
-
-type ItemType struct {
-	ID            string
-	RenderOptions RenderOptions
-}
-
-type Item struct {
-	ID       string
-	Type     ItemType
-	Position Position
+	Image   string
+	Width   int
+	Height  int
+	Visible bool
 }
 
 type Playground struct {

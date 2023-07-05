@@ -21,5 +21,5 @@ type ScreenSettings struct {
 type Settings struct {
 	Name   string
 	Screen *ScreenSettings
-	KeyMap *KeyMap
+	KeyMap KeyMap
 }
