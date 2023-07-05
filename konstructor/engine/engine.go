@@ -20,32 +20,32 @@ func (e *Engine) Layout(outsideWidth, outsideHeight int) (int, int) {
 
 func (e *Engine) Update(screen *ebiten.Image) error {
 	e.WatchKeyPress()
-	if e.KContext.ScreenTypeIs("menu") {
+	if e.KContext.ScreenTypeIs(entity.MenuScreenType) {
 		e.MenuUpdate()
 	}
-	if e.KContext.ScreenTypeIs("dialog") {
+	if e.KContext.ScreenTypeIs(entity.DialogScreenType) {
 		e.DialogUpdate()
 	}
-	if e.KContext.ScreenTypeIs("playground") {
+	if e.KContext.ScreenTypeIs(entity.PlaygroundScreenType) {
 		e.PlaygroundUpdate()
 	}
-	if e.KContext.ScreenTypeIs("inventory") {
+	if e.KContext.ScreenTypeIs(entity.InventoryScreenType) {
 		e.InventoryUpdate()
 	}
 	return nil
 }
 
 func (e *Engine) Draw(screen *ebiten.Image) {
-	if e.KContext.ScreenTypeIs("menu") {
+	if e.KContext.ScreenTypeIs(entity.MenuScreenType) {
 		e.MenuDraw(screen)
 	}
-	if e.KContext.ScreenTypeIs("dialog") {
+	if e.KContext.ScreenTypeIs(entity.DialogScreenType) {
 		e.DialogDraw(screen)
 	}
-	if e.KContext.ScreenTypeIs("playground") {
+	if e.KContext.ScreenTypeIs(entity.PlaygroundScreenType) {
 		e.PlaygroundDraw(screen)
 	}
-	if e.KContext.ScreenTypeIs("inventory") {
+	if e.KContext.ScreenTypeIs(entity.InventoryScreenType) {
 		e.InventoryDraw(screen)
 	}
 	if e.Action3Pressed() {

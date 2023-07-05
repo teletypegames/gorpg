@@ -23,7 +23,7 @@ func main() {
 			},
 		},
 		KContext: &entity.KContext{
-			ScreenType:   "menu",
+			ScreenType:   entity.MenuScreenType,
 			ScreenValue:  "MainMenu",
 			CurrentLevel: 0,
 		},
