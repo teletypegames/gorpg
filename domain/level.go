@@ -34,6 +34,10 @@ func (d *Domain) InitLevel() {
 	}
 }
 
+func (d *Domain) GetLevels() []entity.Level {
+	return d.Levels
+}
+
 func (d *Domain) GetLevel(index int) entity.Level {
 	return d.Levels[index]
 }

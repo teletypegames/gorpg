@@ -6,7 +6,7 @@ import (
 )
 
 func (e *Engine) MenuDraw(screen *ebiten.Image) {
-	menu := e.Domain.GetMenu(e.KContext.Screen.Value)
+	menu := e.Domain.GetMenu(e.KContext.ScreenValue)
 	face := GetFontFace(menu.Layout.MenuItemFont)
 
 	for i, menu_item := range menu.MenuItems {
@@ -17,7 +17,7 @@ func (e *Engine) MenuDraw(screen *ebiten.Image) {
 }
 
 func (e *Engine) MenuUpdate() {
-	menu := e.Domain.GetMenu(e.KContext.Screen.Value)
+	menu := e.Domain.GetMenu(e.KContext.ScreenValue)
 
 	if e.UpPressed() && menu.CurrentSelected != 0 {
 		menu.CurrentSelected--
@@ -31,5 +31,5 @@ func (e *Engine) MenuUpdate() {
 		menu.MenuItems[menu.CurrentSelected].Handler()
 	}
 
-	e.Domain.SetMenu(e.KContext.Screen.Value, menu)
+	e.Domain.SetMenu(e.KContext.ScreenValue, menu)
 }

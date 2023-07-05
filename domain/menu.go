@@ -63,6 +63,10 @@ func (d *Domain) InitMenu() {
 	}
 }
 
+func (d *Domain) GetMenuMap() entity.MenuMap {
+	return d.MenuMap
+}
+
 func (d *Domain) GetMenu(name string) entity.Menu {
 	value, _ := d.MenuMap[name]
 	return value

@@ -30,6 +30,10 @@ func (d *Domain) InitDialog() {
 	}
 }
 
+func (d *Domain) GetDialogMap() entity.DialogMap {
+	return d.DialogMap
+}
+
 func (d *Domain) GetDialog(name string) entity.Dialog {
 	value, _ := d.DialogMap[name]
 	return value

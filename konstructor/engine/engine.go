@@ -18,32 +18,28 @@ func (e *Engine) Layout(outsideWidth, outsideHeight int) (int, int) {
 	return e.Settings.Screen.Width, e.Settings.Screen.Height
 }
 
-func (e *Engine) ScreenTypeIs(name string) bool {
-	return e.KContext.Screen.Type == name
-}
-
 func (e *Engine) Update(screen *ebiten.Image) error {
 	e.WatchKeyPress()
-	if e.ScreenTypeIs("menu") {
+	if e.KContext.ScreenTypeIs("menu") {
 		e.MenuUpdate()
 	}
-	if e.ScreenTypeIs("dialog") {
+	if e.KContext.ScreenTypeIs("dialog") {
 		e.DialogUpdate()
 	}
-	if e.ScreenTypeIs("playground") {
+	if e.KContext.ScreenTypeIs("playground") {
 		e.PlaygroundUpdate()
 	}
 	return nil
 }
 
 func (e *Engine) Draw(screen *ebiten.Image) {
-	if e.ScreenTypeIs("menu") {
+	if e.KContext.ScreenTypeIs("menu") {
 		e.MenuDraw(screen)
 	}
-	if e.ScreenTypeIs("dialog") {
+	if e.KContext.ScreenTypeIs("dialog") {
 		e.DialogDraw(screen)
 	}
-	if e.ScreenTypeIs("playground") {
+	if e.KContext.ScreenTypeIs("playground") {
 		e.PlaygroundDraw(screen)
 	}
 	if e.Action3Pressed() {
