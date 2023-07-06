@@ -1,16 +1,16 @@
 package domain
 
 import (
-	"game/konstructor/entity"
+	"game/konstructor"
 )
 
 func (d *Domain) InitDialog() {
-	d.DialogMap = entity.DialogMap{
+	d.DialogMap = konstructor.DialogMap{
 		"TestDialog": {
-			Layout: entity.DialogLayout{
+			Layout: konstructor.DialogLayout{
 				ChoiceFont: GetDefaultFontLayout(),
 			},
-			Choices: []entity.DialogChoice{
+			Choices: []konstructor.DialogChoice{
 				{
 					ID:    "one",
 					Label: "One",
@@ -24,15 +24,15 @@ func (d *Domain) InitDialog() {
 	}
 }
 
-func (d *Domain) GetDialogMap() entity.DialogMap {
+func (d *Domain) GetDialogMap() konstructor.DialogMap {
 	return d.DialogMap
 }
 
-func (d *Domain) GetDialog(name string) entity.Dialog {
+func (d *Domain) GetDialog(name string) konstructor.Dialog {
 	value, _ := d.DialogMap[name]
 	return value
 }
 
-func (d *Domain) SetDialog(name string, dialog entity.Dialog) {
+func (d *Domain) SetDialog(name string, dialog konstructor.Dialog) {
 	d.DialogMap[name] = dialog
 }

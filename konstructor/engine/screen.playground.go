@@ -1,14 +1,14 @@
 package engine
 
 import (
-	"game/konstructor/entity"
+	"game/konstructor"
 
 	"github.com/hajimehoshi/ebiten"
 )
 
 func (e *Engine) PlaygroundUpdate() {
 	level := e.Domain.GetLevel(e.KContext.CurrentLevel)
-	e.Domain.Process(entity.DomainProcessArgs{
+	e.Domain.Process(konstructor.DomainProcessArgs{
 		Level:    &level,
 		KContext: e.KContext,
 	})
@@ -38,7 +38,7 @@ func (e *Engine) PlaygroundObjectsDraw(screen *ebiten.Image) {
 	}
 }
 
-func (e *Engine) GetPlayground() entity.Playground {
+func (e *Engine) GetPlayground() konstructor.Playground {
 	level := e.Domain.GetLevel(e.KContext.CurrentLevel)
 	return level.Playgrounds[e.KContext.CurrentPlayground]
 }

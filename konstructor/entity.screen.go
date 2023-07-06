@@ -1,4 +1,4 @@
-package entity
+package konstructor
 
 type ScreenType string
 

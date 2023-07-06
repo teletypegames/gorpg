@@ -1,7 +1,7 @@
 package engine
 
 import (
-	"game/konstructor/entity"
+	"game/konstructor"
 	"log"
 
 	_ "image/png"
@@ -9,7 +9,7 @@ import (
 	"github.com/hajimehoshi/ebiten"
 )
 
-func (e *Engine) GetImage(render_options entity.Render) *ebiten.Image {
+func (e *Engine) GetImage(render_options konstructor.Render) *ebiten.Image {
 	img := render_options.GetImage()
 	out, err := ebiten.NewImageFromImage(img, 0)
 	if err != nil {

@@ -1,7 +1,7 @@
 package domain
 
-import "game/konstructor/entity"
+import "game/konstructor"
 
-func (d *Domain) Process(options entity.DomainProcessArgs) {
+func (d *Domain) Process(options konstructor.DomainProcessArgs) {
 
 }

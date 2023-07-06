@@ -1,28 +1,28 @@
 package domain
 
-import "game/konstructor/entity"
+import "game/konstructor"
 
 func (d *Domain) InitLevel() {
-	d.Levels = []entity.Level{
+	d.Levels = []konstructor.Level{
 		{
 			ID:   "level_1",
 			Name: "Level I.",
-			Playgrounds: []entity.Playground{
+			Playgrounds: []konstructor.Playground{
 				{
-					Render: entity.Render{
+					Render: konstructor.Render{
 						Image: "assets/images/playgrounds/level_1_playground_1.png",
 					},
-					Objects: []entity.Object{
+					Objects: []konstructor.Object{
 						{
 							ID: "test_object",
-							Position: entity.Position{
+							Position: konstructor.Position{
 								X: 10,
 								Y: 10,
 								Z: 0,
 							},
-							Type: entity.ObjectType{
+							Type: konstructor.ObjectType{
 								ID: "test_object_type",
-								Render: entity.Render{
+								Render: konstructor.Render{
 									Image:  "assets/images/objects/test_object.png",
 									Width:  30,
 									Height: 30,
@@ -31,14 +31,14 @@ func (d *Domain) InitLevel() {
 						},
 						{
 							ID: "test_object2",
-							Position: entity.Position{
+							Position: konstructor.Position{
 								X: 50,
 								Y: 50,
 								Z: 0,
 							},
-							Type: entity.ObjectType{
+							Type: konstructor.ObjectType{
 								ID: "test_object_type",
-								Render: entity.Render{
+								Render: konstructor.Render{
 									Image:  "assets/images/objects/test_object.png",
 									Width:  30,
 									Height: 30,
@@ -52,10 +52,10 @@ func (d *Domain) InitLevel() {
 	}
 }
 
-func (d *Domain) GetLevels() []entity.Level {
+func (d *Domain) GetLevels() []konstructor.Level {
 	return d.Levels
 }
 
-func (d *Domain) GetLevel(index int) entity.Level {
+func (d *Domain) GetLevel(index int) konstructor.Level {
 	return d.Levels[index]
 }

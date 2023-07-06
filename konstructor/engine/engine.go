@@ -1,16 +1,16 @@
 package engine
 
 import (
-	"game/konstructor/entity"
+	"game/konstructor"
 	"os"
 
 	"github.com/hajimehoshi/ebiten"
 )
 
 type Engine struct {
-	Domain     entity.DomainInterface
-	Settings   *entity.Settings
-	KContext   *entity.KContext
+	Domain     konstructor.DomainInterface
+	Settings   *konstructor.Settings
+	KContext   *konstructor.KContext
 	PressedKey ebiten.Key
 }
 
@@ -20,32 +20,32 @@ func (e *Engine) Layout(outsideWidth, outsideHeight int) (int, int) {
 
 func (e *Engine) Update(screen *ebiten.Image) error {
 	e.WatchKeyPress()
-	if e.KContext.ScreenTypeIs(entity.MenuScreenType) {
+	if e.KContext.ScreenTypeIs(konstructor.MenuScreenType) {
 		e.MenuUpdate()
 	}
-	if e.KContext.ScreenTypeIs(entity.DialogScreenType) {
+	if e.KContext.ScreenTypeIs(konstructor.DialogScreenType) {
 		e.DialogUpdate()
 	}
-	if e.KContext.ScreenTypeIs(entity.PlaygroundScreenType) {
+	if e.KContext.ScreenTypeIs(konstructor.PlaygroundScreenType) {
 		e.PlaygroundUpdate()
 	}
-	if e.KContext.ScreenTypeIs(entity.InventoryScreenType) {
+	if e.KContext.ScreenTypeIs(konstructor.InventoryScreenType) {
 		e.InventoryUpdate()
 	}
 	return nil
 }
 
 func (e *Engine) Draw(screen *ebiten.Image) {
-	if e.KContext.ScreenTypeIs(entity.MenuScreenType) {
+	if e.KContext.ScreenTypeIs(konstructor.MenuScreenType) {
 		e.MenuDraw(screen)
 	}
-	if e.KContext.ScreenTypeIs(entity.DialogScreenType) {
+	if e.KContext.ScreenTypeIs(konstructor.DialogScreenType) {
 		e.DialogDraw(screen)
 	}
-	if e.KContext.ScreenTypeIs(entity.PlaygroundScreenType) {
+	if e.KContext.ScreenTypeIs(konstructor.PlaygroundScreenType) {
 		e.PlaygroundDraw(screen)
 	}
-	if e.KContext.ScreenTypeIs(entity.InventoryScreenType) {
+	if e.KContext.ScreenTypeIs(konstructor.InventoryScreenType) {
 		e.InventoryDraw(screen)
 	}
 	if e.Action3Pressed() {

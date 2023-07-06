@@ -1,12 +1,12 @@
 package domain
 
 import (
-	"game/konstructor/entity"
+	"game/konstructor"
 	"image/color"
 )
 
-func GetDefaultFontLayout() entity.FontLayout {
-	return entity.FontLayout{
+func GetDefaultFontLayout() konstructor.FontLayout {
+	return konstructor.FontLayout{
 		Path:          "assets/fonts/ArcadeClassic.ttf",
 		DPI:           72,
 		Size:          24,

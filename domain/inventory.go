@@ -1,15 +1,15 @@
 package domain
 
-import "game/konstructor/entity"
+import "game/konstructor"
 
-func (d *Domain) AddToInventory(item *entity.Item) bool {
+func (d *Domain) AddToInventory(item *konstructor.Item) bool {
 	return true
 }
 
-func (d *Domain) RemoveFromInventory(item *entity.Item) bool {
+func (d *Domain) RemoveFromInventory(item *konstructor.Item) bool {
 	return true
 }
 
-func (d *Domain) UseInventoryItem(item *entity.Item) bool {
+func (d *Domain) UseInventoryItem(item *konstructor.Item) bool {
 	return true
 }

@@ -1,7 +1,7 @@
 package engine
 
 import (
-	"game/konstructor/entity"
+	"game/konstructor"
 
 	"github.com/hajimehoshi/ebiten"
 )
@@ -10,7 +10,7 @@ type EngineWrapper struct {
 	Engine Engine
 }
 
-func (ew *EngineWrapper) Init(options entity.EngineArgs) {
+func (ew *EngineWrapper) Init(options konstructor.EngineArgs) {
 	ew.Engine = Engine{
 		KContext: options.KContext,
 		Domain:   options.Domain,
