@@ -1,5 +1,12 @@
 package konstructor
 
+type DomainBaseFields struct {
+	MenuMap       MenuMap
+	DialogMap     DialogMap
+	Levels        []Level
+	ObjectTypeMap ObjectTypeMap
+}
+
 type DomainInterface interface {
 	Init()
 

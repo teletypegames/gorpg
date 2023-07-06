@@ -5,14 +5,12 @@ import (
 )
 
 type Domain struct {
-	Context       Context
-	MenuMap       konstructor.MenuMap
-	DialogMap     konstructor.DialogMap
-	Levels        []konstructor.Level
-	ObjectTypeMap konstructor.ObjectTypeMap
+	konstructor.DomainBaseFields
+	Context Context
 }
 
 func (d *Domain) Init() {
+	d.InitObjectType()
 	d.InitMenu()
 	d.InitDialog()
 	d.InitLevel()
