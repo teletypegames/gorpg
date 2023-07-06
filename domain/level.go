@@ -20,14 +20,7 @@ func (d *Domain) InitLevel() {
 								Y: 10,
 								Z: 0,
 							},
-							Type: konstructor.ObjectType{
-								ID: "test_object_type",
-								Render: konstructor.Render{
-									Image:  "assets/images/objects/test_object.png",
-									Width:  30,
-									Height: 30,
-								},
-							},
+							Type: d.GetObjectType("TestObjectType"),
 						},
 						{
 							ID: "test_object2",
@@ -36,14 +29,7 @@ func (d *Domain) InitLevel() {
 								Y: 50,
 								Z: 0,
 							},
-							Type: konstructor.ObjectType{
-								ID: "test_object_type",
-								Render: konstructor.Render{
-									Image:  "assets/images/objects/test_object.png",
-									Width:  30,
-									Height: 30,
-								},
-							},
+							Type: d.GetObjectType("TestObjectType"),
 						},
 					},
 				},

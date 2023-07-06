@@ -1,5 +1,7 @@
 package konstructor
 
+type ObjectTypeMap map[string]ObjectType
+
 type ObjectType struct {
 	ID     string
 	Render Render

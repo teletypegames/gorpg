@@ -14,6 +14,9 @@ type DomainInterface interface {
 	GetLevels() []Level
 	GetLevel(index int) Level
 
+	GetObjectTypeMap() ObjectTypeMap
+	GetObjectType(name string) ObjectType
+
 	AddToInventory(item *Item) bool
 	RemoveFromInventory(item *Item) bool
 	UseInventoryItem(item *Item) bool
