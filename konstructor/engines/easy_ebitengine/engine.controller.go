@@ -1,4 +1,4 @@
-package engine
+package easy_ebitengine
 
 import (
 	"fmt"

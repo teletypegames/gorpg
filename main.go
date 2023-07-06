@@ -3,14 +3,14 @@ package main
 import (
 	"game/domain"
 	"game/konstructor"
-	"game/konstructor/engine"
+	"game/konstructor/engines/easy_ebitengine"
 
 	"github.com/hajimehoshi/ebiten"
 )
 
 func main() {
 	k := konstructor.Konstructor{
-		EngineWrapper: &engine.EngineWrapper{},
+		EngineWrapper: &easy_ebitengine.EngineWrapper{},
 		Domain:        &domain.Domain{},
 		KContext: &konstructor.KContext{
 			ScreenType:        konstructor.PlaygroundScreenType,
