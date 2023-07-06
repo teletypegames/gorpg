@@ -1,5 +1,7 @@
 package konstructor
 
+type NPCTypeMap map[string]NPCType
+
 type NPCType struct {
 	ID     string
 	Render Render

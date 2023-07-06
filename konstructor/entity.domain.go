@@ -5,6 +5,8 @@ type DomainBaseFields struct {
 	DialogMap     DialogMap
 	Levels        []Level
 	ObjectTypeMap ObjectTypeMap
+	ItemTypeMap   ItemTypeMap
+	NPCTypeMap    NPCTypeMap
 }
 
 type DomainInterface interface {
@@ -23,6 +25,12 @@ type DomainInterface interface {
 
 	GetObjectTypeMap() ObjectTypeMap
 	GetObjectType(name string) ObjectType
+
+	GetItemTypeMap() ItemTypeMap
+	GetItemType(name string) ItemType
+
+	GetNPCTypeMap() NPCTypeMap
+	GetNPCType(name string) NPCType
 
 	AddToInventory(item *Item) bool
 	RemoveFromInventory(item *Item) bool
