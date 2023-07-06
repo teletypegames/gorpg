@@ -4,9 +4,13 @@ import (
 	"game/konstructor"
 )
 
+const (
+	DialogTest konstructor.DialogMapKey = "DialogTest"
+)
+
 func (d *Domain) InitDialog() {
 	d.DialogMap = konstructor.DialogMap{
-		"TestDialog": {
+		DialogTest: {
 			Layout: konstructor.DialogLayout{
 				ChoiceFont: GetDefaultFontLayout(),
 			},
@@ -28,11 +32,11 @@ func (d *Domain) GetDialogMap() konstructor.DialogMap {
 	return d.DialogMap
 }
 
-func (d *Domain) GetDialog(name string) konstructor.Dialog {
+func (d *Domain) GetDialog(name konstructor.DialogMapKey) konstructor.Dialog {
 	value, _ := d.DialogMap[name]
 	return value
 }
 
-func (d *Domain) SetDialog(name string, dialog konstructor.Dialog) {
+func (d *Domain) SetDialog(name konstructor.DialogMapKey, dialog konstructor.Dialog) {
 	d.DialogMap[name] = dialog
 }

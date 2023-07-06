@@ -2,7 +2,9 @@ package konstructor
 
 import "image/color"
 
-type DialogMap map[string]Dialog
+type DialogMapKey string
+
+type DialogMap map[DialogMapKey]Dialog
 
 type DialogLayout struct {
 	Render     Render

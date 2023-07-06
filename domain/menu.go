@@ -6,9 +6,14 @@ import (
 	"os"
 )
 
+const (
+	MainMenu konstructor.MenuMapKey = "MainMenu"
+	GameMenu konstructor.MenuMapKey = "GameMenu"
+)
+
 func (d *Domain) InitMenu() {
 	d.MenuMap = konstructor.MenuMap{
-		"MainMenu": {
+		MainMenu: {
 			CurrentSelected: 0,
 			Layout: konstructor.MenuLayout{
 				MenuItemFont: GetDefaultFontLayout(),
@@ -31,7 +36,7 @@ func (d *Domain) InitMenu() {
 				},
 			},
 		},
-		"GameMenu": {
+		GameMenu: {
 			CurrentSelected: 0,
 			Layout: konstructor.MenuLayout{
 				MenuItemFont: GetDefaultFontLayout(),
@@ -56,12 +61,12 @@ func (d *Domain) GetMenuMap() konstructor.MenuMap {
 	return d.MenuMap
 }
 
-func (d *Domain) GetMenu(name string) konstructor.Menu {
+func (d *Domain) GetMenu(name konstructor.MenuMapKey) konstructor.Menu {
 	value, _ := d.MenuMap[name]
 	return value
 }
 
-func (d *Domain) SetMenu(name string, menu konstructor.Menu) {
+func (d *Domain) SetMenu(name konstructor.MenuMapKey, menu konstructor.Menu) {
 	d.MenuMap[name] = menu
 }
 

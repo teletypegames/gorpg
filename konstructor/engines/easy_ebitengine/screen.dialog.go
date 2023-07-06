@@ -6,7 +6,7 @@ import (
 )
 
 func (e *Engine) DialogUpdate() {
-	dialog := e.Domain.GetDialog(e.KContext.ScreenValue)
+	dialog := e.Domain.GetDialog(e.KContext.ActiveDialog)
 
 	if e.UpPressed() && dialog.CurrentSelected != 0 {
 		dialog.CurrentSelected--
@@ -19,11 +19,11 @@ func (e *Engine) DialogUpdate() {
 	if e.Action0Pressed() {
 		dialog.Choices[dialog.CurrentSelected].Handler()
 	}
-	e.Domain.SetDialog(e.KContext.ScreenValue, dialog)
+	e.Domain.SetDialog(e.KContext.ActiveDialog, dialog)
 }
 
 func (e *Engine) DialogDraw(screen *ebiten.Image) {
-	dialog := e.Domain.GetDialog(e.KContext.ScreenValue)
+	dialog := e.Domain.GetDialog(e.KContext.ActiveDialog)
 
 	face := dialog.Layout.ChoiceFont.GetFontFace()
 

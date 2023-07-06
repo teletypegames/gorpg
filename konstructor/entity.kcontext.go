@@ -2,7 +2,8 @@ package konstructor
 
 type KContext struct {
 	ScreenType        ScreenType
-	ScreenValue       string
+	ActiveMenu        MenuMapKey
+	ActiveDialog      DialogMapKey
 	CurrentLevel      int
 	CurrentPlayground int
 	Players           []Player

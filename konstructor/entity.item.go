@@ -1,6 +1,8 @@
 package konstructor
 
-type ItemTypeMap map[string]ItemType
+type ItemTypeMapKey string
+
+type ItemTypeMap map[ItemTypeMapKey]ItemType
 
 type ItemType struct {
 	ID     string

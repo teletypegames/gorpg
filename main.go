@@ -13,8 +13,9 @@ func main() {
 		EngineWrapper: &easy_ebitengine.EngineWrapper{},
 		Domain:        &domain.Domain{},
 		KContext: &konstructor.KContext{
-			ScreenType:        konstructor.PlaygroundScreenType,
-			ScreenValue:       "MainMenu",
+			ScreenType:        konstructor.DialogScreenType,
+			ActiveMenu:        domain.MainMenu,
+			ActiveDialog:      domain.DialogTest,
 			CurrentLevel:      0,
 			CurrentPlayground: 0,
 		},

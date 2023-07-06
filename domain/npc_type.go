@@ -10,7 +10,7 @@ func (d *Domain) GetNPCTypeMap() konstructor.NPCTypeMap {
 	return d.NPCTypeMap
 }
 
-func (d *Domain) GetNPCType(name string) konstructor.NPCType {
+func (d *Domain) GetNPCType(name konstructor.NPCTypeMapKey) konstructor.NPCType {
 	value, _ := d.NPCTypeMap[name]
 	return value
 }

@@ -19,7 +19,7 @@ func (d *Domain) GetObjectTypeMap() konstructor.ObjectTypeMap {
 	return d.ObjectTypeMap
 }
 
-func (d *Domain) GetObjectType(name string) konstructor.ObjectType {
+func (d *Domain) GetObjectType(name konstructor.ObjectTypeMapKey) konstructor.ObjectType {
 	value, _ := d.ObjectTypeMap[name]
 	return value
 }

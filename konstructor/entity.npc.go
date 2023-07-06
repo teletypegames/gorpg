@@ -1,6 +1,8 @@
 package konstructor
 
-type NPCTypeMap map[string]NPCType
+type NPCTypeMapKey string
+
+type NPCTypeMap map[NPCTypeMapKey]NPCType
 
 type NPCType struct {
 	ID     string

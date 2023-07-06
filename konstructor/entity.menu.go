@@ -2,7 +2,9 @@ package konstructor
 
 import "image/color"
 
-type MenuMap map[string]Menu
+type MenuMapKey string
+
+type MenuMap map[MenuMapKey]Menu
 
 type MenuLayout struct {
 	MenuItemFont FontLayout
