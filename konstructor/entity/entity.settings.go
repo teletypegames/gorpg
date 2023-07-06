@@ -14,6 +14,7 @@ type KeyMap struct {
 type ScreenSettings struct {
 	Width  int
 	Height int
+	Scale  int
 }
 
 type Settings struct {

@@ -1,10 +1,11 @@
 package entity
 
 type KContext struct {
-	ScreenType   ScreenType
-	ScreenValue  string
-	CurrentLevel int
-	Players      []Player
+	ScreenType        ScreenType
+	ScreenValue       string
+	CurrentLevel      int
+	CurrentPlayground int
+	Players           []Player
 }
 
 func (c *KContext) getPrimaryPlayer() Player {

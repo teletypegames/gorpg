@@ -15,5 +15,30 @@ func (e *Engine) PlaygroundUpdate() {
 }
 
 func (e *Engine) PlaygroundDraw(screen *ebiten.Image) {
-	e.Domain.GetLevel(e.KContext.CurrentLevel)
+	e.PlaygroundBackgroundDraw(screen)
+	e.PlaygroundObjectsDraw(screen)
+}
+
+func (e *Engine) PlaygroundBackgroundDraw(screen *ebiten.Image) {
+	playground := e.GetPlayground()
+	render := playground.Render
+	screen.DrawImage(e.GetImage(render), &ebiten.DrawImageOptions{})
+}
+
+func (e *Engine) PlaygroundObjectsDraw(screen *ebiten.Image) {
+	playground := e.GetPlayground()
+	geoM := ebiten.GeoM{}
+	for _, object := range playground.Objects {
+		render := object.Type.Render
+		geoM.Reset()
+		geoM.Translate(float64(object.Position.X), float64(object.Position.Y))
+		screen.DrawImage(e.GetImage(render), &ebiten.DrawImageOptions{
+			GeoM: geoM,
+		})
+	}
+}
+
+func (e *Engine) GetPlayground() entity.Playground {
+	level := e.Domain.GetLevel(e.KContext.CurrentLevel)
+	return level.Playgrounds[e.KContext.CurrentPlayground]
 }

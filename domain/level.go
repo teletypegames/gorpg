@@ -29,6 +29,22 @@ func (d *Domain) InitLevel() {
 								},
 							},
 						},
+						{
+							ID: "test_object2",
+							Position: entity.Position{
+								X: 50,
+								Y: 50,
+								Z: 0,
+							},
+							Type: entity.ObjectType{
+								ID: "test_object_type",
+								Render: entity.Render{
+									Image:  "assets/images/objects/test_object.png",
+									Width:  30,
+									Height: 30,
+								},
+							},
+						},
 					},
 				},
 			},

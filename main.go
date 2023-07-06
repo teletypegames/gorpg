@@ -12,26 +12,19 @@ import (
 func main() {
 	k := konstructor.Konstructor{
 		EngineWrapper: &engine.EngineWrapper{},
-		Domain: &domain.Domain{
-			Context: domain.Context{
-				PlayerState: domain.PlayerState{
-					Name: "Player One",
-				},
-				User: domain.User{
-					Name: "John Doe",
-				},
-			},
-		},
+		Domain:        &domain.Domain{},
 		KContext: &entity.KContext{
-			ScreenType:   entity.MenuScreenType,
-			ScreenValue:  "MainMenu",
-			CurrentLevel: 0,
+			ScreenType:        entity.PlaygroundScreenType,
+			ScreenValue:       "MainMenu",
+			CurrentLevel:      0,
+			CurrentPlayground: 0,
 		},
 		Settings: &entity.Settings{
 			Name: "Game",
 			Screen: &entity.ScreenSettings{
-				Width:  640,
-				Height: 480,
+				Width:  320,
+				Height: 240,
+				Scale:  2,
 			},
 			KeyMap: entity.KeyMap{
 				Up:      ebiten.KeyUp,
