@@ -16,6 +16,7 @@ func (e *Engine) PlaygroundUpdate() {
 
 func (e *Engine) PlaygroundDraw(screen *ebiten.Image) {
 	e.PlaygroundBackgroundDraw(screen)
+	e.PlaygroundHeaderDraw(screen)
 	e.PlaygroundPlatformsDraw(screen)
 	e.PlaygroundItemsDraw(screen)
 	e.PlaygroundNPCsDraw(screen)
@@ -25,32 +26,6 @@ func (e *Engine) PlaygroundDraw(screen *ebiten.Image) {
 func (e *Engine) PlaygroundBackgroundDraw(screen *ebiten.Image) {
 	playground := e.GetPlayground()
 	e.PlaygroundAssetDraw(screen, playground.Render, konstructor.Position{})
-}
-
-func (e *Engine) PlaygroundPlatformsDraw(screen *ebiten.Image) {
-	playground := e.GetPlayground()
-	for _, platform := range playground.Platforms {
-		e.PlaygroundAssetDraw(screen, platform.Type.Render, platform.Position)
-	}
-}
-
-func (e *Engine) PlaygroundItemsDraw(screen *ebiten.Image) {
-	playground := e.GetPlayground()
-	for _, item := range playground.Items {
-		e.PlaygroundAssetDraw(screen, item.Type.Render, item.Position)
-	}
-}
-
-func (e *Engine) PlaygroundNPCsDraw(screen *ebiten.Image) {
-	playground := e.GetPlayground()
-	for _, npc := range playground.NPCs {
-		e.PlaygroundAssetDraw(screen, npc.Type.Render, npc.Position)
-	}
-}
-
-func (e *Engine) PlaygroundDefaultPlayerDraw(screen *ebiten.Image) {
-	player := e.Domain.GetDefaultPlayer()
-	e.PlaygroundAssetDraw(screen, player.Type.Render, player.Position)
 }
 
 func (e *Engine) GetPlayground() konstructor.Playground {
