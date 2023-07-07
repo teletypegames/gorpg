@@ -12,24 +12,24 @@ func (d *Domain) InitLevel() {
 					Render: konstructor.Render{
 						Image: "assets/images/playgrounds/level_1_playground_1.png",
 					},
-					Objects: []konstructor.Object{
+					Platforms: []konstructor.Platform{
 						{
-							ID: "test_object",
+							ID: "test_platform",
 							Position: konstructor.Position{
 								X: 10,
 								Y: 10,
 								Z: 0,
 							},
-							Type: d.GetObjectType(TestObjectType),
+							Type: d.GetPlatformType(TestPlatformType),
 						},
 						{
-							ID: "test_object2",
+							ID: "test_platform2",
 							Position: konstructor.Position{
 								X: 50,
 								Y: 50,
 								Z: 0,
 							},
-							Type: d.GetObjectType(TestObjectType),
+							Type: d.GetPlatformType(TestPlatformType),
 						},
 					},
 					Items: []konstructor.Item{

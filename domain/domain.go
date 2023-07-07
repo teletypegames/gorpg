@@ -10,7 +10,7 @@ type Domain struct {
 }
 
 func (d *Domain) Init() {
-	d.InitObjectType()
+	d.InitPlatformType()
 	d.InitItemType()
 	d.InitNPCType()
 	d.InitMenu()

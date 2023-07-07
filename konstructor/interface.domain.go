@@ -1,12 +1,12 @@
 package konstructor
 
 type DomainBaseFields struct {
-	MenuMap       MenuMap
-	DialogMap     DialogMap
-	Levels        []Level
-	ObjectTypeMap ObjectTypeMap
-	ItemTypeMap   ItemTypeMap
-	NPCTypeMap    NPCTypeMap
+	MenuMap         MenuMap
+	DialogMap       DialogMap
+	Levels          []Level
+	PlatformTypeMap PlatformTypeMap
+	ItemTypeMap     ItemTypeMap
+	NPCTypeMap      NPCTypeMap
 }
 
 type DomainInterface interface {
@@ -23,8 +23,8 @@ type DomainInterface interface {
 	GetLevels() []Level
 	GetLevel(index int) Level
 
-	GetObjectTypeMap() ObjectTypeMap
-	GetObjectType(name ObjectTypeMapKey) ObjectType
+	GetPlatformTypeMap() PlatformTypeMap
+	GetPlatformType(name PlatformTypeMapKey) PlatformType
 
 	GetItemTypeMap() ItemTypeMap
 	GetItemType(name ItemTypeMapKey) ItemType

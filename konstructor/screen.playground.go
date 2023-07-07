@@ -7,10 +7,10 @@ type Position struct {
 }
 
 type Playground struct {
-	Render  Render
-	Objects []Object
-	NPCs    []NPC
-	Items   []Item
+	Render    Render
+	Platforms []Platform
+	NPCs      []NPC
+	Items     []Item
 }
 
 type Level struct {

@@ -16,7 +16,7 @@ func (e *Engine) PlaygroundUpdate() {
 
 func (e *Engine) PlaygroundDraw(screen *ebiten.Image) {
 	e.PlaygroundBackgroundDraw(screen)
-	e.PlaygroundObjectsDraw(screen)
+	e.PlaygroundPlatformsDraw(screen)
 	e.PlaygroundItemsDraw(screen)
 	e.PlaygroundNPCsDraw(screen)
 }
@@ -27,13 +27,13 @@ func (e *Engine) PlaygroundBackgroundDraw(screen *ebiten.Image) {
 	screen.DrawImage(e.GetImage(render), &ebiten.DrawImageOptions{})
 }
 
-func (e *Engine) PlaygroundObjectsDraw(screen *ebiten.Image) {
+func (e *Engine) PlaygroundPlatformsDraw(screen *ebiten.Image) {
 	playground := e.GetPlayground()
 	geoM := ebiten.GeoM{}
-	for _, object := range playground.Objects {
-		render := object.Type.Render
+	for _, platform := range playground.Platforms {
+		render := platform.Type.Render
 		geoM.Reset()
-		geoM.Translate(float64(object.Position.X), float64(object.Position.Y))
+		geoM.Translate(float64(platform.Position.X), float64(platform.Position.Y))
 		screen.DrawImage(e.GetImage(render), &ebiten.DrawImageOptions{
 			GeoM: geoM,
 		})
@@ -43,10 +43,10 @@ func (e *Engine) PlaygroundObjectsDraw(screen *ebiten.Image) {
 func (e *Engine) PlaygroundItemsDraw(screen *ebiten.Image) {
 	playground := e.GetPlayground()
 	geoM := ebiten.GeoM{}
-	for _, object := range playground.Items {
-		render := object.Type.Render
+	for _, platform := range playground.Items {
+		render := platform.Type.Render
 		geoM.Reset()
-		geoM.Translate(float64(object.Position.X), float64(object.Position.Y))
+		geoM.Translate(float64(platform.Position.X), float64(platform.Position.Y))
 		screen.DrawImage(e.GetImage(render), &ebiten.DrawImageOptions{
 			GeoM: geoM,
 		})
@@ -56,10 +56,10 @@ func (e *Engine) PlaygroundItemsDraw(screen *ebiten.Image) {
 func (e *Engine) PlaygroundNPCsDraw(screen *ebiten.Image) {
 	playground := e.GetPlayground()
 	geoM := ebiten.GeoM{}
-	for _, object := range playground.NPCs {
-		render := object.Type.Render
+	for _, platform := range playground.NPCs {
+		render := platform.Type.Render
 		geoM.Reset()
-		geoM.Translate(float64(object.Position.X), float64(object.Position.Y))
+		geoM.Translate(float64(platform.Position.X), float64(platform.Position.Y))
 		screen.DrawImage(e.GetImage(render), &ebiten.DrawImageOptions{
 			GeoM: geoM,
 		})
