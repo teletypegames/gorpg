@@ -3,7 +3,7 @@ package konstructor
 type Konstructor struct {
 	Domain        DomainInterface
 	KContext      *KContext
-	Settings      *Settings
+	Config        *Config
 	EngineWrapper EngineWrapperInterface
 }
 
@@ -12,7 +12,7 @@ func (k Konstructor) Init() {
 	k.EngineWrapper.Init(EngineArgs{
 		Domain:   k.Domain,
 		KContext: k.KContext,
-		Settings: k.Settings,
+		Config:   k.Config,
 	})
 	k.EngineWrapper.Run()
 }

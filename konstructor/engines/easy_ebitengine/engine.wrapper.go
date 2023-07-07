@@ -14,10 +14,10 @@ func (ew *EngineWrapper) Init(options konstructor.EngineArgs) {
 	ew.Engine = Engine{
 		KContext: options.KContext,
 		Domain:   options.Domain,
-		Settings: options.Settings,
+		Config:   options.Config,
 	}
-	ebiten.SetWindowSize(options.Settings.Screen.Width, options.Settings.Screen.Height)
-	ebiten.SetWindowTitle(options.Settings.Name)
+	ebiten.SetWindowSize(options.Config.Screen.Width, options.Config.Screen.Height)
+	ebiten.SetWindowTitle(options.Config.Name)
 }
 
 func (ew *EngineWrapper) Run() {

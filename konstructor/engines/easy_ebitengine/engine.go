@@ -9,13 +9,13 @@ import (
 
 type Engine struct {
 	Domain     konstructor.DomainInterface
-	Settings   *konstructor.Settings
+	Config     *konstructor.Config
 	KContext   *konstructor.KContext
 	PressedKey ebiten.Key
 }
 
 func (e *Engine) Layout(outsideWidth, outsideHeight int) (int, int) {
-	return e.Settings.Screen.Width, e.Settings.Screen.Height
+	return e.Config.Screen.Width, e.Config.Screen.Height
 }
 
 func (e *Engine) Update(screen *ebiten.Image) error {

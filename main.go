@@ -19,9 +19,9 @@ func main() {
 			CurrentLevel:      0,
 			CurrentPlayground: 0,
 		},
-		Settings: &konstructor.Settings{
+		Config: &konstructor.Config{
 			Name: "Game",
-			Screen: &konstructor.ScreenSettings{
+			Screen: &konstructor.ScreenConfig{
 				Width:  320,
 				Height: 240,
 				Scale:  2,

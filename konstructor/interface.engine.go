@@ -3,7 +3,7 @@ package konstructor
 type EngineArgs struct {
 	Domain   DomainInterface
 	KContext *KContext
-	Settings *Settings
+	Config   *Config
 }
 
 type EngineWrapperInterface interface {

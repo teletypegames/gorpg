@@ -11,14 +11,14 @@ type KeyMap struct {
 	Action3 any
 }
 
-type ScreenSettings struct {
+type ScreenConfig struct {
 	Width  int
 	Height int
 	Scale  int
 }
 
-type Settings struct {
+type Config struct {
 	Name   string
-	Screen *ScreenSettings
+	Screen *ScreenConfig
 	KeyMap KeyMap
 }
