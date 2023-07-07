@@ -6,11 +6,7 @@ type KContext struct {
 	ActiveDialog      DialogMapKey
 	CurrentLevel      int
 	CurrentPlayground int
-	Players           []Player
-}
-
-func (c *KContext) getPrimaryPlayer() Player {
-	return c.Players[0]
+	Multiplayer       bool
 }
 
 func (c *KContext) ScreenTypeIs(name ScreenType) bool {

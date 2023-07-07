@@ -19,6 +19,7 @@ func (e *Engine) PlaygroundDraw(screen *ebiten.Image) {
 	e.PlaygroundPlatformsDraw(screen)
 	e.PlaygroundItemsDraw(screen)
 	e.PlaygroundNPCsDraw(screen)
+	e.PlaygroundDefaultPlayerDraw(screen)
 }
 
 func (e *Engine) PlaygroundBackgroundDraw(screen *ebiten.Image) {
@@ -64,6 +65,17 @@ func (e *Engine) PlaygroundNPCsDraw(screen *ebiten.Image) {
 			GeoM: geoM,
 		})
 	}
+}
+
+func (e *Engine) PlaygroundDefaultPlayerDraw(screen *ebiten.Image) {
+	player := e.Domain.GetDefaultPlayer()
+	geoM := ebiten.GeoM{}
+	render := player.Type.Render
+	geoM.Reset()
+	geoM.Translate(float64(player.Position.X), float64(player.Position.Y))
+	screen.DrawImage(e.GetImage(render), &ebiten.DrawImageOptions{
+		GeoM: geoM,
+	})
 }
 
 func (e *Engine) GetPlayground() konstructor.Playground {

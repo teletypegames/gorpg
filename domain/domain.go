@@ -15,5 +15,6 @@ func (d *Domain) Init() {
 	d.InitNPCType()
 	d.InitMenu()
 	d.InitDialog()
+	d.InitPlayer()
 	d.InitLevel()
 }

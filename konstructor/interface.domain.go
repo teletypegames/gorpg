@@ -4,6 +4,7 @@ type DomainBaseFields struct {
 	MenuMap         MenuMap
 	DialogMap       DialogMap
 	Levels          []Level
+	Players         []Player
 	PlatformTypeMap PlatformTypeMap
 	ItemTypeMap     ItemTypeMap
 	NPCTypeMap      NPCTypeMap
@@ -22,6 +23,10 @@ type DomainInterface interface {
 
 	GetLevels() []Level
 	GetLevel(index int) Level
+
+	GetPlayers() []Player
+	GetPlayer(index int) Player
+	GetDefaultPlayer() Player
 
 	GetPlatformTypeMap() PlatformTypeMap
 	GetPlatformType(name PlatformTypeMapKey) PlatformType
