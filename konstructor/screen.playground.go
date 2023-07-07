@@ -1,5 +1,7 @@
 package konstructor
 
+type PlaygroundID string
+
 type Position struct {
 	X int
 	Y int
@@ -7,6 +9,7 @@ type Position struct {
 }
 
 type Playground struct {
+	ID        PlaygroundID
 	Render    Render
 	Platforms []Platform
 	NPCs      []NPC
@@ -17,4 +20,8 @@ type Level struct {
 	ID          string
 	Name        string
 	Playgrounds []Playground
+}
+
+func GetPlaygroundImagePath(name PlaygroundID) string {
+	return "assets/images/playgrounds/" + string(name) + ".png"
 }

@@ -14,3 +14,7 @@ type Item struct {
 	Type     ItemType
 	Position Position
 }
+
+func GetItemTypeImagePath(name ItemTypeMapKey) string {
+	return GetObjectDirectory(ItemObjectType) + string(name) + ".png"
+}

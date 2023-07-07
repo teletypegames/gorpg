@@ -3,14 +3,14 @@ package domain
 import "game/konstructor"
 
 const (
-	TestNPCType konstructor.NPCTypeMapKey = "test"
+	TestNPCType konstructor.NPCTypeMapKey = "test_npc"
 )
 
 func (d *Domain) InitNPCType() {
 	d.NPCTypeMap = konstructor.NPCTypeMap{
 		TestNPCType: {
 			Render: konstructor.Render{
-				Image: "assets/images/npcs/test_npc.png",
+				Image: konstructor.GetNPCTypeImagePath(TestNPCType),
 			},
 		},
 	}

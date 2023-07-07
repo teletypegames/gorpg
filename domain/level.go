@@ -2,6 +2,10 @@ package domain
 
 import "game/konstructor"
 
+const (
+	Level1Playground1 konstructor.PlaygroundID = "level_1_playground_1"
+)
+
 func (d *Domain) InitLevel() {
 	d.Levels = []konstructor.Level{
 		{
@@ -9,8 +13,9 @@ func (d *Domain) InitLevel() {
 			Name: "Level I.",
 			Playgrounds: []konstructor.Playground{
 				{
+					ID: Level1Playground1,
 					Render: konstructor.Render{
-						Image: "assets/images/playgrounds/level_1_playground_1.png",
+						Image: konstructor.GetPlaygroundImagePath(Level1Playground1),
 					},
 					Platforms: []konstructor.Platform{
 						{

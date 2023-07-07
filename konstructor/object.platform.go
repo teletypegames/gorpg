@@ -14,3 +14,7 @@ type Platform struct {
 	Type     PlatformType
 	Position Position
 }
+
+func GetPlatformTypeImagePath(name PlatformTypeMapKey) string {
+	return GetObjectDirectory(PlatformObjectType) + string(name) + ".png"
+}

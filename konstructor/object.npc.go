@@ -14,3 +14,7 @@ type NPC struct {
 	Type     NPCType
 	Position Position
 }
+
+func GetNPCTypeImagePath(name NPCTypeMapKey) string {
+	return GetObjectDirectory(NPCObjectType) + string(name) + ".png"
+}

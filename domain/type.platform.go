@@ -3,7 +3,7 @@ package domain
 import "game/konstructor"
 
 const (
-	TestPlatformType konstructor.PlatformTypeMapKey = "test"
+	TestPlatformType konstructor.PlatformTypeMapKey = "test_platform"
 )
 
 func (d *Domain) InitPlatformType() {
@@ -11,7 +11,7 @@ func (d *Domain) InitPlatformType() {
 		TestPlatformType: konstructor.PlatformType{
 			ID: "test_platform_type",
 			Render: konstructor.Render{
-				Image:  "assets/images/platforms/test_platform.png",
+				Image:  konstructor.GetPlatformTypeImagePath(TestPlatformType),
 				Width:  30,
 				Height: 30,
 			},

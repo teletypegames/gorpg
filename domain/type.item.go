@@ -11,7 +11,7 @@ func (d *Domain) InitItemType() {
 		SwordItemType: {
 			ID: "sword",
 			Render: konstructor.Render{
-				Image: "assets/images/items/sword.png",
+				Image: konstructor.GetItemTypeImagePath(SwordItemType),
 			},
 		},
 	}
