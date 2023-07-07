@@ -22,8 +22,8 @@ func main() {
 		Config: &konstructor.Config{
 			Name: "Game",
 			Screen: &konstructor.ScreenConfig{
-				Width:  320,
-				Height: 240,
+				Width:  640,
+				Height: 480,
 				Scale:  2,
 			},
 			KeyMap: konstructor.KeyMap{

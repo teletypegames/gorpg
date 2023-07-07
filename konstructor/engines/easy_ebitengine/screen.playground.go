@@ -24,61 +24,45 @@ func (e *Engine) PlaygroundDraw(screen *ebiten.Image) {
 
 func (e *Engine) PlaygroundBackgroundDraw(screen *ebiten.Image) {
 	playground := e.GetPlayground()
-	render := playground.Render
-	screen.DrawImage(e.GetImage(render), &ebiten.DrawImageOptions{})
+	e.PlaygroundAssetDraw(screen, playground.Render, konstructor.Position{})
 }
 
 func (e *Engine) PlaygroundPlatformsDraw(screen *ebiten.Image) {
 	playground := e.GetPlayground()
-	geoM := ebiten.GeoM{}
 	for _, platform := range playground.Platforms {
-		render := platform.Type.Render
-		geoM.Reset()
-		geoM.Translate(float64(platform.Position.X), float64(platform.Position.Y))
-		screen.DrawImage(e.GetImage(render), &ebiten.DrawImageOptions{
-			GeoM: geoM,
-		})
+		e.PlaygroundAssetDraw(screen, platform.Type.Render, platform.Position)
 	}
 }
 
 func (e *Engine) PlaygroundItemsDraw(screen *ebiten.Image) {
 	playground := e.GetPlayground()
-	geoM := ebiten.GeoM{}
-	for _, platform := range playground.Items {
-		render := platform.Type.Render
-		geoM.Reset()
-		geoM.Translate(float64(platform.Position.X), float64(platform.Position.Y))
-		screen.DrawImage(e.GetImage(render), &ebiten.DrawImageOptions{
-			GeoM: geoM,
-		})
+	for _, item := range playground.Items {
+		e.PlaygroundAssetDraw(screen, item.Type.Render, item.Position)
 	}
 }
 
 func (e *Engine) PlaygroundNPCsDraw(screen *ebiten.Image) {
 	playground := e.GetPlayground()
-	geoM := ebiten.GeoM{}
-	for _, platform := range playground.NPCs {
-		render := platform.Type.Render
-		geoM.Reset()
-		geoM.Translate(float64(platform.Position.X), float64(platform.Position.Y))
-		screen.DrawImage(e.GetImage(render), &ebiten.DrawImageOptions{
-			GeoM: geoM,
-		})
+	for _, npc := range playground.NPCs {
+		e.PlaygroundAssetDraw(screen, npc.Type.Render, npc.Position)
 	}
 }
 
 func (e *Engine) PlaygroundDefaultPlayerDraw(screen *ebiten.Image) {
 	player := e.Domain.GetDefaultPlayer()
-	geoM := ebiten.GeoM{}
-	render := player.Type.Render
-	geoM.Reset()
-	geoM.Translate(float64(player.Position.X), float64(player.Position.Y))
-	screen.DrawImage(e.GetImage(render), &ebiten.DrawImageOptions{
-		GeoM: geoM,
-	})
+	e.PlaygroundAssetDraw(screen, player.Type.Render, player.Position)
 }
 
 func (e *Engine) GetPlayground() konstructor.Playground {
 	level := e.Domain.GetLevel(e.KContext.CurrentLevel)
 	return level.Playgrounds[e.KContext.CurrentPlayground]
+}
+
+func (e *Engine) PlaygroundAssetDraw(screen *ebiten.Image, render konstructor.Render, position konstructor.Position) {
+	geoM := ebiten.GeoM{}
+	geoM.Translate(float64(position.X), float64(position.Y))
+	geoM.Scale(float64(e.Config.Screen.Scale), float64(e.Config.Screen.Scale))
+	screen.DrawImage(e.GetImage(render), &ebiten.DrawImageOptions{
+		GeoM: geoM,
+	})
 }
