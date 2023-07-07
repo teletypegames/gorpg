@@ -2,8 +2,19 @@ package domain
 
 import "game/konstructor"
 
+const (
+	SwordItemType konstructor.ItemTypeMapKey = "sword"
+)
+
 func (d *Domain) InitItemType() {
-	d.ItemTypeMap = konstructor.ItemTypeMap{}
+	d.ItemTypeMap = konstructor.ItemTypeMap{
+		SwordItemType: {
+			ID: "sword",
+			Render: konstructor.Render{
+				Image: "assets/images/items/sword.png",
+			},
+		},
+	}
 }
 
 func (d *Domain) GetItemTypeMap() konstructor.ItemTypeMap {

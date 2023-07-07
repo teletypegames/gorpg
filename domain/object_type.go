@@ -2,9 +2,13 @@ package domain
 
 import "game/konstructor"
 
+const (
+	TestObjectType konstructor.ObjectTypeMapKey = "test"
+)
+
 func (d *Domain) InitObjectType() {
 	d.ObjectTypeMap = konstructor.ObjectTypeMap{
-		"TestObjectType": konstructor.ObjectType{
+		TestObjectType: konstructor.ObjectType{
 			ID: "test_object_type",
 			Render: konstructor.Render{
 				Image:  "assets/images/objects/test_object.png",

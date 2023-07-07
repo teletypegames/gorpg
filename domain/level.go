@@ -20,7 +20,7 @@ func (d *Domain) InitLevel() {
 								Y: 10,
 								Z: 0,
 							},
-							Type: d.GetObjectType("TestObjectType"),
+							Type: d.GetObjectType(TestObjectType),
 						},
 						{
 							ID: "test_object2",
@@ -29,7 +29,29 @@ func (d *Domain) InitLevel() {
 								Y: 50,
 								Z: 0,
 							},
-							Type: d.GetObjectType("TestObjectType"),
+							Type: d.GetObjectType(TestObjectType),
+						},
+					},
+					Items: []konstructor.Item{
+						{
+							ID: "sword_1",
+							Position: konstructor.Position{
+								X: 100,
+								Y: 100,
+								Z: 0,
+							},
+							Type: d.GetItemType(SwordItemType),
+						},
+					},
+					NPCs: []konstructor.NPC{
+						{
+							ID: "test_npc_1",
+							Position: konstructor.Position{
+								X: 220,
+								Y: 180,
+								Z: 0,
+							},
+							Type: d.GetNPCType(TestNPCType),
 						},
 					},
 				},

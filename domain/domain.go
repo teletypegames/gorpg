@@ -11,6 +11,8 @@ type Domain struct {
 
 func (d *Domain) Init() {
 	d.InitObjectType()
+	d.InitItemType()
+	d.InitNPCType()
 	d.InitMenu()
 	d.InitDialog()
 	d.InitLevel()
