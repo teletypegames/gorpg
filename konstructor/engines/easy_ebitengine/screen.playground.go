@@ -16,11 +16,11 @@ func (e *Engine) PlaygroundUpdate() {
 
 func (e *Engine) PlaygroundDraw(screen *ebiten.Image) {
 	e.PlaygroundBackgroundDraw(screen)
-	e.PlaygroundHeaderDraw(screen)
 	e.PlaygroundPlatformsDraw(screen)
 	e.PlaygroundItemsDraw(screen)
 	e.PlaygroundNPCsDraw(screen)
 	e.PlaygroundDefaultPlayerDraw(screen)
+	e.PlaygroundHeaderDraw(screen)
 }
 
 func (e *Engine) PlaygroundBackgroundDraw(screen *ebiten.Image) {
@@ -37,7 +37,5 @@ func (e *Engine) PlaygroundAssetDraw(screen *ebiten.Image, render konstructor.Re
 	geoM := ebiten.GeoM{}
 	geoM.Translate(float64(position.X), float64(position.Y))
 	geoM.Scale(float64(e.Config.Screen.Scale), float64(e.Config.Screen.Scale))
-	screen.DrawImage(e.GetImage(render), &ebiten.DrawImageOptions{
-		GeoM: geoM,
-	})
+	screen.DrawImage(e.GetImage(render), &ebiten.DrawImageOptions{GeoM: geoM})
 }

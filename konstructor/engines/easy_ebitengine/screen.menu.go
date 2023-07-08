@@ -25,7 +25,7 @@ func (e *Engine) MenuUpdate() {
 
 func (e *Engine) MenuDraw(screen *ebiten.Image) {
 	menu := e.Domain.GetMenu(e.KContext.ActiveMenu)
-	face := menu.Layout.MenuItemFont.GetFontFace()
+	face := menu.Layout.MenuItemFont.GetFontFace(e.Config.Screen.Scale)
 
 	for i, menu_item := range menu.MenuItems {
 		color := menu.GetMenuItemColor(i)

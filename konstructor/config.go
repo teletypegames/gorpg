@@ -1,5 +1,7 @@
 package konstructor
 
+import "image/color"
+
 type KeyMap struct {
 	Up      any
 	Down    any
@@ -16,9 +18,15 @@ type ScreenConfig struct {
 	Height int
 	Scale  int
 }
+type HeaderConfig struct {
+	BackgroundColor color.Color
+	Height          int
+	FontLayout      FontLayout
+}
 
 type Config struct {
 	Name   string
 	Screen *ScreenConfig
+	Header *HeaderConfig
 	KeyMap KeyMap
 }

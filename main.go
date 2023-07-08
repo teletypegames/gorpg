@@ -4,6 +4,7 @@ import (
 	"game/domain"
 	"game/konstructor"
 	"game/konstructor/engines/easy_ebitengine"
+	"image/color"
 
 	"github.com/hajimehoshi/ebiten"
 )
@@ -18,13 +19,25 @@ func main() {
 			ActiveDialog:      domain.DialogTest,
 			CurrentLevel:      0,
 			CurrentPlayground: 0,
+			Multiplayer:       false,
+			LiveCount:         3,
 		},
 		Config: &konstructor.Config{
-			Name: "Game",
+			Name: "Teletype   Adventure",
 			Screen: &konstructor.ScreenConfig{
 				Width:  640,
 				Height: 480,
 				Scale:  2,
+			},
+			Header: &konstructor.HeaderConfig{
+				BackgroundColor: color.RGBA{
+					R: 0,
+					G: 255,
+					B: 0,
+					A: 200,
+				},
+				Height:     20,
+				FontLayout: domain.GetHeaderFontLayout(),
 			},
 			KeyMap: konstructor.KeyMap{
 				Up:      ebiten.KeyUp,

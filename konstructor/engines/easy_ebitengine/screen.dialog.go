@@ -25,7 +25,7 @@ func (e *Engine) DialogUpdate() {
 func (e *Engine) DialogDraw(screen *ebiten.Image) {
 	dialog := e.Domain.GetDialog(e.KContext.ActiveDialog)
 
-	face := dialog.Layout.ChoiceFont.GetFontFace()
+	face := dialog.Layout.ChoiceFont.GetFontFace(e.Config.Screen.Scale)
 
 	for i, choice := range dialog.Choices {
 		offset := int(dialog.Layout.ChoiceFont.Size) * (i + 1)

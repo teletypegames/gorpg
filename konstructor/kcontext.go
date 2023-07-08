@@ -7,6 +7,7 @@ type KContext struct {
 	CurrentLevel      int
 	CurrentPlayground int
 	Multiplayer       bool
+	LiveCount         int
 }
 
 func (c *KContext) ScreenTypeIs(name ScreenType) bool {
