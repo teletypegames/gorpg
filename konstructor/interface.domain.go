@@ -13,6 +13,9 @@ type DomainBaseFields struct {
 type DomainInterface interface {
 	Init()
 
+	GetInitialKContext() *KContext
+	GetInitialConfig() *Config
+
 	GetMenuMap() MenuMap
 	GetMenu(name MenuMapKey) Menu
 	SetMenu(name MenuMapKey, menu Menu)
