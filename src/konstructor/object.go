@@ -1,5 +1,6 @@
 package konstructor
 
+// Object type type for function input validation
 type ObjectType string
 
 const (
@@ -9,6 +10,7 @@ const (
 	PlayerObjectType   ObjectType = "player"
 )
 
+// Map of object type's directories
 type ObjectDirectoryMap map[ObjectType]string
 
 var ObjectDirectories = ObjectDirectoryMap{
@@ -18,6 +20,7 @@ var ObjectDirectories = ObjectDirectoryMap{
 	PlayerObjectType:   "players",
 }
 
+// Return with the path of a specific object type asset directory
 func GetObjectDirectory(name ObjectType) string {
 	return "assets/images/" + ObjectDirectories[name] + "/"
 }

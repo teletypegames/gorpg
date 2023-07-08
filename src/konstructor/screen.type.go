@@ -1,5 +1,6 @@
 package konstructor
 
+// Type of screen type for method input validation
 type ScreenType string
 
 const (

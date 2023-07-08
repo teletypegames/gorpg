@@ -15,6 +15,7 @@ type NPC struct {
 	Position Position
 }
 
+// Helper, which return with the path of a specific NPC type
 func GetNPCTypeImagePath(name NPCTypeMapKey) string {
 	return GetObjectDirectory(NPCObjectType) + string(name) + ".png"
 }

@@ -7,6 +7,7 @@ import (
 	"log"
 )
 
+// Element render options
 type Render struct {
 	Image       string
 	Width       int
@@ -15,6 +16,7 @@ type Render struct {
 	cachedImage image.Image
 }
 
+// Get image object from image path
 func (ro *Render) GetImage() image.Image {
 	if ro.cachedImage != nil {
 		return ro.cachedImage

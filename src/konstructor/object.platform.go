@@ -15,6 +15,7 @@ type Platform struct {
 	Position Position
 }
 
+// Helper, which return with the path of a specific platform type
 func GetPlatformTypeImagePath(name PlatformTypeMapKey) string {
 	return GetObjectDirectory(PlatformObjectType) + string(name) + ".png"
 }

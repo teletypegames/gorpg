@@ -7,6 +7,7 @@ type Konstructor struct {
 	EngineWrapper EngineWrapperInterface
 }
 
+// Framework initialization
 func (k Konstructor) Init() {
 	k.Domain.Init()
 	k.EngineWrapper.Init(EngineArgs{

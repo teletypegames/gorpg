@@ -8,8 +8,10 @@ import (
 	"golang.org/x/image/font/opentype"
 )
 
+// Font name type for function input validation
 type FontName string
 
+// Font preset
 type FontLayout struct {
 	Path           string
 	DPI            float64
@@ -19,6 +21,7 @@ type FontLayout struct {
 	cachedFontFace font.Face
 }
 
+// Get font face from the preset
 func (fl *FontLayout) GetFontFace(scale int) font.Face {
 	if fl.cachedFontFace != nil {
 		return fl.cachedFontFace
@@ -34,6 +37,7 @@ func (fl *FontLayout) GetFontFace(scale int) font.Face {
 	return font_face
 }
 
+// Helper, which return the path of font
 func GetFontPath(name FontName) string {
 	return "assets/fonts/" + string(name) + ".ttf"
 }
