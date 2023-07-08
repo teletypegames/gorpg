@@ -23,8 +23,8 @@ func (d *Domain) GetInitialConfig() *konstructor.Config {
 	return &konstructor.Config{
 		Name: "Teletype   Adventure",
 		Screen: &konstructor.ScreenConfig{
-			Width:  640,
-			Height: 480,
+			Width:  konstructor.VGAResolutionSet.Width,
+			Height: konstructor.VGAResolutionSet.Height,
 			Scale:  2,
 		},
 		Header: &konstructor.HeaderConfig{
