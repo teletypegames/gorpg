@@ -1,6 +1,6 @@
 package domain
 
-import "game/konstructor"
+import "game/src/konstructor"
 
 const (
 	Level1Playground1 konstructor.PlaygroundID = "level_1_playground_1"

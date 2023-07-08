@@ -2,7 +2,7 @@ package easy_ebitengine
 
 import (
 	"fmt"
-	"game/konstructor"
+	"game/src/konstructor"
 	"image/color"
 
 	"github.com/hajimehoshi/ebiten"

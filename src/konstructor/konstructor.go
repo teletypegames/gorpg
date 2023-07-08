@@ -1,5 +1,7 @@
+// Game framework inspired by AGI
 package konstructor
 
+// Main struct of framework
 type Konstructor struct {
 	Domain        DomainInterface
 	EngineWrapper EngineWrapperInterface

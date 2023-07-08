@@ -1,9 +1,9 @@
 package main
 
 import (
-	"game/domain"
-	"game/konstructor"
-	"game/konstructor/engines/easy_ebitengine"
+	"game/src/domain"
+	"game/src/konstructor"
+	"game/src/konstructor/engines/easy_ebitengine"
 )
 
 func main() {

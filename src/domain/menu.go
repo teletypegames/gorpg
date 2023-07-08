@@ -2,7 +2,7 @@ package domain
 
 import (
 	"fmt"
-	"game/konstructor"
+	"game/src/konstructor"
 	"os"
 )
 

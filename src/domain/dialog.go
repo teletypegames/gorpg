@@ -1,7 +1,7 @@
 package domain
 
 import (
-	"game/konstructor"
+	"game/src/konstructor"
 )
 
 const (

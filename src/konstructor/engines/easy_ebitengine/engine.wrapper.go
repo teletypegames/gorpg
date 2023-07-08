@@ -1,7 +1,7 @@
 package easy_ebitengine
 
 import (
-	"game/konstructor"
+	"game/src/konstructor"
 
 	"github.com/hajimehoshi/ebiten"
 )

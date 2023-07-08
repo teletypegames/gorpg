@@ -1,6 +1,6 @@
 package domain
 
-import "game/konstructor"
+import "game/src/konstructor"
 
 const (
 	TestNPCType konstructor.NPCTypeMapKey = "test_npc"
