@@ -1,7 +1,7 @@
 package domain
 
 import (
-	"game/src/konstructor"
+	"git.teletypegames.org/engines/gorpg/src/konstructor"
 )
 
 type Domain struct {

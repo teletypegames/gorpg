@@ -1,4 +1,4 @@
-module game
+module git.teletypegames.org/engines/gorpg
 
 go 1.20
 

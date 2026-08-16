@@ -1,6 +1,6 @@
 package domain
 
-import "game/src/konstructor"
+import "git.teletypegames.org/engines/gorpg/src/konstructor"
 
 const (
 	DefaultPlayerType konstructor.PlayerTypeID = "default"

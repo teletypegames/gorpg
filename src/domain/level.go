@@ -1,6 +1,6 @@
 package domain
 
-import "game/src/konstructor"
+import "git.teletypegames.org/engines/gorpg/src/konstructor"
 
 const (
 	Level1Playground1 konstructor.PlaygroundID = "level_1_playground_1"

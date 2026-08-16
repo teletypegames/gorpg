@@ -1,9 +1,9 @@
 package main
 
 import (
-	"game/src/domain"
-	"game/src/konstructor"
-	"game/src/konstructor/engines/easy_ebitengine"
+	"git.teletypegames.org/engines/gorpg/src/domain"
+	"git.teletypegames.org/engines/gorpg/src/konstructor"
+	"git.teletypegames.org/engines/gorpg/src/konstructor/engines/easy_ebitengine"
 )
 
 func main() {

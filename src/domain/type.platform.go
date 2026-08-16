@@ -1,6 +1,6 @@
 package domain
 
-import "game/src/konstructor"
+import "git.teletypegames.org/engines/gorpg/src/konstructor"
 
 const (
 	TestPlatformType konstructor.PlatformTypeMapKey = "test_platform"
